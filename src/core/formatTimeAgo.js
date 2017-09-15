@@ -1,7 +1,7 @@
 /**
  * 将时间转化为几天前,几小时前，几分钟前
  *
- * @param {number} ms时间戳
+ * @param {number} ms
  * @returns {*}
  * @example
  *
