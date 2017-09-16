@@ -13,7 +13,3 @@ node_modules
 .idea
 .project
 .happypack
-
-# dist
-dist
-docs
