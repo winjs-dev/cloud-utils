@@ -81,12 +81,6 @@ arr-flatten@^1.0.1:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/arr-flatten/download/arr-flatten-1.1.0.tgz#36048bbff4e7b47e136644316c99669ea5ae91f1"
 
-array-back@^1.0.2, array-back@^1.0.3, array-back@^1.0.4:
-  version "1.0.4"
-  resolved "http://registry.npm.taobao.org/array-back/download/array-back-1.0.4.tgz#644ba7f095f7ffcf7c43b5f0dc39d3c1f03c063b"
-  dependencies:
-    typical "^2.6.0"
-
 array-filter@^1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/array-filter/download/array-filter-1.0.0.tgz#baf79e62e6ef4c2a4c0b831232daffec251f9d83"
@@ -1507,17 +1501,6 @@ js2xmlparser@~3.0.0:
   dependencies:
     xmlcreate "^1.0.1"
 
-jsdoc-parse@^3.0.0:
-  version "3.0.0"
-  resolved "http://registry.npm.taobao.org/jsdoc-parse/download/jsdoc-parse-3.0.0.tgz#271531d88f19df2520b1632a7f6c989441a87fde"
-  dependencies:
-    array-back "^1.0.4"
-    lodash.omit "^4.5.0"
-    lodash.pick "^4.4.0"
-    reduce-extract "^1.0.0"
-    sort-array "^1.1.1"
-    test-value "^2.1.0"
-
 jsdoc@^3.5.4:
   version "3.5.4"
   resolved "http://registry.npm.taobao.org/jsdoc/download/jsdoc-3.5.4.tgz#ceeef7c4bac4335cb10ff41e3a0f58939a534428"
@@ -1623,14 +1606,6 @@ loader-utils@^1.0.2:
     big.js "^3.1.3"
     emojis-list "^2.0.0"
     json5 "^0.5.0"
-
-lodash.omit@^4.5.0:
-  version "4.5.0"
-  resolved "http://registry.npm.taobao.org/lodash.omit/download/lodash.omit-4.5.0.tgz#6eb19ae5a1ee1dd9df0b969e66ce0b7fa30b5e60"
-
-lodash.pick@^4.4.0:
-  version "4.4.0"
-  resolved "http://registry.npm.taobao.org/lodash.pick/download/lodash.pick-4.4.0.tgz#52f05610fff9ded422611441ed1fc123a03001b3"
 
 lodash@^4.0.0, lodash@^4.17.3, lodash@^4.17.4, lodash@^4.3.0:
   version "4.17.4"
@@ -1756,10 +1731,6 @@ number-is-nan@^1.0.0:
 object-assign@^4.0.1, object-assign@^4.1.0:
   version "4.1.1"
   resolved "http://registry.npm.taobao.org/object-assign/download/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
-
-object-get@^2.1.0:
-  version "2.1.0"
-  resolved "http://registry.npm.taobao.org/object-get/download/object-get-2.1.0.tgz#722bbdb60039efa47cad3c6dc2ce51a85c02c5ae"
 
 object-hash@^1.1.4:
   version "1.1.8"
@@ -2048,12 +2019,6 @@ rechoir@^0.6.2:
   dependencies:
     resolve "^1.1.6"
 
-reduce-extract@^1.0.0:
-  version "1.0.0"
-  resolved "http://registry.npm.taobao.org/reduce-extract/download/reduce-extract-1.0.0.tgz#67f2385beda65061b5f5f4312662e8b080ca1525"
-  dependencies:
-    test-value "^1.0.1"
-
 regenerate@^1.2.1:
   version "1.3.2"
   resolved "http://registry.npm.taobao.org/regenerate/download/regenerate-1.3.2.tgz#d1941c67bad437e1be76433add5b385f95b19260"
@@ -2258,14 +2223,6 @@ slice-ansi@0.0.4:
   version "0.0.4"
   resolved "http://registry.npm.taobao.org/slice-ansi/download/slice-ansi-0.0.4.tgz#edbf8903f66f7ce2f8eafd6ceed65e264c831b35"
 
-sort-array@^1.1.1:
-  version "1.1.2"
-  resolved "http://registry.npm.taobao.org/sort-array/download/sort-array-1.1.2.tgz#b88986053c0170a7f9de63f18a49ec79c24c3e64"
-  dependencies:
-    array-back "^1.0.4"
-    object-get "^2.1.0"
-    typical "^2.6.0"
-
 source-map-support@^0.4.0, source-map-support@^0.4.15:
   version "0.4.18"
   resolved "http://registry.npm.taobao.org/source-map-support/download/source-map-support-0.4.18.tgz#0286a6de8be42641338594e97ccea75f0a2c585f"
@@ -2382,20 +2339,6 @@ test-exclude@^3.3.0:
     read-pkg-up "^1.0.1"
     require-main-filename "^1.0.1"
 
-test-value@^1.0.1:
-  version "1.1.0"
-  resolved "http://registry.npm.taobao.org/test-value/download/test-value-1.1.0.tgz#a09136f72ec043d27c893707c2b159bfad7de93f"
-  dependencies:
-    array-back "^1.0.2"
-    typical "^2.4.2"
-
-test-value@^2.1.0:
-  version "2.1.0"
-  resolved "http://registry.npm.taobao.org/test-value/download/test-value-2.1.0.tgz#11da6ff670f3471a73b625ca4f3fdcf7bb748291"
-  dependencies:
-    array-back "^1.0.3"
-    typical "^2.6.0"
-
 text-table@~0.2.0:
   version "0.2.0"
   resolved "http://registry.npm.taobao.org/text-table/download/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
@@ -2437,10 +2380,6 @@ type-name@^2.0.1:
 typedarray@^0.0.6:
   version "0.0.6"
   resolved "http://registry.npm.taobao.org/typedarray/download/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
-
-typical@^2.4.2, typical@^2.6.0:
-  version "2.6.1"
-  resolved "http://registry.npm.taobao.org/typical/download/typical-2.6.1.tgz#5c080e5d661cbbe38259d2e70a3c7253e873881d"
 
 uglify-js@3.1.x:
   version "3.1.0"
