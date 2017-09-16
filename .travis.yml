@@ -23,13 +23,13 @@ after_script:
   - git init
   - git config user.name "${u_name}"
   - git config user.email "${u_email}"
-  - git add .
+  - git add -A .
   - git commit -m "Update tools"
   - git push --force --quiet "https://${gh_token}@${gh_ref}" master:${p_branch}
 
 branches:
 only:
-- Source
+- master
 env:
 global:
 - gh_ref: github.com/cloud-templates/cloud-utils.git
