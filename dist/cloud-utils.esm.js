@@ -1,5 +1,5 @@
 /*!
- * cloud-utils v1.0.5 
+ * cloud-utils v1.0.7 
  * (c) 2017 liwb
  * A collection of utils
  * Released under the MIT License.
@@ -790,7 +790,7 @@ function isDigit(val) {
  * // => true
  */
 function isLeapYear(val) {
-  if(typeof val !== 'number') { throw new Error('val必须为number类型'); }
+  if (typeof val !== 'number') { throw new Error('val必须为number类型'); }
 
   if (val % 4 === 0 && val % 100 !== 0) {
     return true;
@@ -1264,6 +1264,6 @@ var utils = {
   extend: extend
 };
 
-utils.version = '1.0.5';
+utils.version = '1.0.7';
 
 export default utils;
