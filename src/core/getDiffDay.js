@@ -7,7 +7,7 @@
  * @returns {number}
  * @example
  *
- * getDiffDay(1501516800000,1504195200000);
+ * getDiffDay(1501516800000, 1504195200000);
  * // => 31
  */
 function getDiffDay(startDay, endDay) {

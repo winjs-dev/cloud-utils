@@ -12,6 +12,7 @@ import formatTimeAgo from './core/formatTimeAgo';
 import formatDateToTimeStamp from './core/formatDateToTimeStamp';
 import formatMoney from './core/formatMoney';
 import formatPhone from './core/formatPhone';
+import formatCopyfilesPath from './core/formatCopyfilesPath';
 import getLocationHrefParam from './core/getLocationHrefParam';
 import getLocationSearchParam from './core/getLocationSearchParam';
 import getUrlNames from './core/getUrlNames';
@@ -41,6 +42,7 @@ import getPixelRatio from './core/getPixelRatio';
 import insertAtCaret from './core/insertAtCaret';
 import getDevice from './core/getDevice';
 import getBrowser from './core/getBrowser';
+import getDiffDay from './core/getDiffDay';
 
 const utils = {
   // 加密算法类
@@ -48,9 +50,6 @@ const utils = {
 
   // 格式化类
   formatBankCard,
-  formatDate,
-  formatTimeAgo,
-  formatDateToTimeStamp,
   formatMoney,
   formatPhone,
 
@@ -95,6 +94,12 @@ const utils = {
   accSub,
   preZeroFill,
 
+  // 时间类
+  formatDate,
+  formatTimeAgo,
+  formatDateToTimeStamp,
+  getDiffDay,
+
   // 其他
   bytesToSize,
   dataURLToBlob,
@@ -102,7 +107,8 @@ const utils = {
   insertAtCaret,
   addChineseUnit,
   appendStockSuffix,
-  extend
+  extend,
+  formatCopyfilesPath
 };
 
 utils.version = '__VERSION__';

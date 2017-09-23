@@ -540,6 +540,21 @@ function formatPhone(phone, symbol) {
 }
 
 /**
+ * 静态文件路径补全
+ *
+ * @since 1.0.7
+ * @param {string} file 文件名字
+ * @returns {string}
+ * @example
+ *
+ * formatCopyfilesPath('logo.png');
+ * // => assets/images/copyfiles/logo.png
+ */
+function formatCopyfilesPath(file) {
+  return ("assets/images/copyfiles/" + file);
+}
+
+/**
  * 获取location.href参数
  *
  * @param {string} name
@@ -1201,15 +1216,30 @@ function getBrowser() {
   }
 }
 
+/**
+ * 得到两个时间的时间差（返回天数）
+ *
+ * @since 1.0.7
+ * @param {number} startDay 开始时间戳
+ * @param {number} endDay   结束时间戳
+ * @returns {number}
+ * @example
+ *
+ * getDiffDay(1501516800000, 1504195200000);
+ * // => 31
+ */
+function getDiffDay(startDay, endDay) {
+  startDay = Number(startDay);
+  endDay = Number(endDay);
+  return Math.abs(endDay - startDay) / (24 * 1000 * 3600);
+}
+
 var utils = {
   // 加密算法类
   encrypt: encrypt,
 
   // 格式化类
   formatBankCard: formatBankCard,
-  formatDate: formatDate,
-  formatTimeAgo: formatTimeAgo,
-  formatDateToTimeStamp: formatDateToTimeStamp,
   formatMoney: formatMoney,
   formatPhone: formatPhone,
 
@@ -1254,6 +1284,12 @@ var utils = {
   accSub: accSub,
   preZeroFill: preZeroFill,
 
+  // 时间类
+  formatDate: formatDate,
+  formatTimeAgo: formatTimeAgo,
+  formatDateToTimeStamp: formatDateToTimeStamp,
+  getDiffDay: getDiffDay,
+
   // 其他
   bytesToSize: bytesToSize,
   dataURLToBlob: dataURLToBlob,
@@ -1261,7 +1297,8 @@ var utils = {
   insertAtCaret: insertAtCaret,
   addChineseUnit: addChineseUnit,
   appendStockSuffix: appendStockSuffix,
-  extend: extend
+  extend: extend,
+  formatCopyfilesPath: formatCopyfilesPath
 };
 
 utils.version = '1.0.7';
