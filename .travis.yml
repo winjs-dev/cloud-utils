@@ -18,12 +18,9 @@ script:
   - npm run build
 
 after_script:
-  - cd ./src
-  - git init
-  - git config user.name "${u_name}"
-  - git config user.email "${u_email}"
+  - cd ./docs
   - git add -A .
-  - git commit -m "Update tools"
+  - git commit -m "Update docs"
   - git push --force --quiet "https://${gh_token}@${gh_ref}" master:${p_branch}
 
 branches:
