@@ -15,13 +15,7 @@ cache:
   - $HOME/.yarn-cache
 
 script:
-  - npm run build
-
-after_script:
-  - cd ./docs
-  - git add -A .
-  - git commit -m "Update docs"
-  - git push --force --quiet "https://${gh_token}@${gh_ref}" master:${p_branch}
+  - npm run deploy
 
 branches:
   only:
