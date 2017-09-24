@@ -16,10 +16,9 @@ cache:
 
 script:
   - npm run build
-  - npm run gen:docs
 
 after_script:
-  #- cd ./src
+  - cd ./src
   - git init
   - git config user.name "${u_name}"
   - git config user.email "${u_email}"
@@ -28,11 +27,12 @@ after_script:
   - git push --force --quiet "https://${gh_token}@${gh_ref}" master:${p_branch}
 
 branches:
-only:
-- master
+  only:
+  - master
+
 env:
-global:
-- gh_ref: github.com/cloud-templates/cloud-utils.git
+  global:
+    - gh_ref: github.com/cloud-templates/cloud-utils.git
 
 
 
