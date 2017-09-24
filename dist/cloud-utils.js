@@ -1,5 +1,5 @@
 /*!
- * cloud-utils v1.0.8 
+ * cloud-utils v1.0.9 
  * (c) 2017 liwb
  * A collection of utils
  * Released under the MIT License.
@@ -1307,7 +1307,7 @@ var utils = {
   formatCopyfilesPath: formatCopyfilesPath
 };
 
-utils.version = '1.0.7';
+utils.version = '1.0.8';
 
 return utils;
 
