@@ -1,7 +1,7 @@
 {
   "name": "cloud-utils",
   "description": "A collection of utils",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": {
     "name": "liwb",
     "email": "lwbhtml@163.com"
@@ -31,9 +31,7 @@
     "uglify-js": "^2.7.5"
   },
   "files": [
-    "dist/cloud-utils.js",
-    "dist/cloud-utils.min.js",
-    "dist/cloud-utils.common.js",
+    "dist/*.js",
     "src"
   ],
   "main": "dist/cloud-utils.js",
