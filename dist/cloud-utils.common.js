@@ -1,10 +1,12 @@
 /*!
- * cloud-utils v1.1.1 
+ * cloud-utils v1.1.3 
  * (c) 2017 liwb
  * A collection of utils
  * Released under the MIT License.
  */
 'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
 
 /**
  * 加法函数，用来得到精确的加法结果<br>
@@ -1236,73 +1238,48 @@ function getDiffDay(startDay, endDay) {
   return Math.abs(endDay - startDay) / (24 * 1000 * 3600);
 }
 
-var utils = {
-  // 加密算法类
-  encrypt: encrypt,
-
-  // 格式化类
-  formatBankCard: formatBankCard,
-  formatMoney: formatMoney,
-  formatPhone: formatPhone,
-
-  // 浏览器地址相关参数
-  getLocationHrefParam: getLocationHrefParam,
-  getLocationSearchParam: getLocationSearchParam,
-  getUrlNames: getUrlNames,
-
-  // 随机数类
-  generateGUID: generateGUID,
-  getRandomInt: getRandomInt,
-
-  // 转义字符
-  htmlDecode: htmlDecode,
-  htmlEncode: htmlEncode,
-
-  // 内核、设备等，如微信，支付宝
-  getDevice: getDevice,
-  getBrowser: getBrowser,
-  inAlipay: inAlipay,
-  inWeixin: inWeixin,
-
-  // 验证类
-  isCardId: isCardId,
-  isDigit: isDigit,
-  isEmptyObject: isEmptyObject,
-  isLeapYear: isLeapYear,
-  isLetters: isLetters,
-  isLicenseNo: isLicenseNo,
-  isMobile: isMobile,
-  isValidDate: isValidDate,
-  isValidEmail: isValidEmail,
-  isValidPassword: isValidPassword,
-  isValidQQ: isValidQQ,
-  isValidURI: isValidURI,
-  isValidZipcode: isValidZipcode,
-
-  // 计算类或数学类
-  accAdd: accAdd,
-  accDiv: accDiv,
-  accMul: accMul,
-  accSub: accSub,
-  preZeroFill: preZeroFill,
-
-  // 时间类
-  formatDate: formatDate,
-  formatTimeAgo: formatTimeAgo,
-  formatDateToTimeStamp: formatDateToTimeStamp,
-  getDiffDay: getDiffDay,
-
-  // 其他
-  bytesToSize: bytesToSize,
-  dataURLToBlob: dataURLToBlob,
-  getPixelRatio: getPixelRatio,
-  insertAtCaret: insertAtCaret,
-  addChineseUnit: addChineseUnit,
-  appendStockSuffix: appendStockSuffix,
-  extend: extend,
-  formatCopyfilesPath: formatCopyfilesPath
-};
-
-utils.version = '1.1.0';
-
-module.exports = utils;
+exports.accAdd = accAdd;
+exports.accDiv = accDiv;
+exports.accMul = accMul;
+exports.accSub = accSub;
+exports.addChineseUnit = addChineseUnit;
+exports.appendStockSuffix = appendStockSuffix;
+exports.encrypt = encrypt;
+exports.extend = extend;
+exports.formatBankCard = formatBankCard;
+exports.formatDate = formatDate;
+exports.formatTimeAgo = formatTimeAgo;
+exports.formatDateToTimeStamp = formatDateToTimeStamp;
+exports.formatMoney = formatMoney;
+exports.formatPhone = formatPhone;
+exports.formatCopyfilesPath = formatCopyfilesPath;
+exports.getLocationHrefParam = getLocationHrefParam;
+exports.getLocationSearchParam = getLocationSearchParam;
+exports.getUrlNames = getUrlNames;
+exports.generateGUID = generateGUID;
+exports.getRandomInt = getRandomInt;
+exports.htmlDecode = htmlDecode;
+exports.htmlEncode = htmlEncode;
+exports.inAlipay = inAlipay;
+exports.inWeixin = inWeixin;
+exports.isCardId = isCardId;
+exports.isDigit = isDigit;
+exports.isEmptyObject = isEmptyObject;
+exports.isLeapYear = isLeapYear;
+exports.isLetters = isLetters;
+exports.isLicenseNo = isLicenseNo;
+exports.isMobile = isMobile;
+exports.isValidDate = isValidDate;
+exports.isValidEmail = isValidEmail;
+exports.isValidPassword = isValidPassword;
+exports.isValidQQ = isValidQQ;
+exports.isValidURI = isValidURI;
+exports.isValidZipcode = isValidZipcode;
+exports.preZeroFill = preZeroFill;
+exports.bytesToSize = bytesToSize;
+exports.dataURLToBlob = dataURLToBlob;
+exports.getPixelRatio = getPixelRatio;
+exports.insertAtCaret = insertAtCaret;
+exports.getDevice = getDevice;
+exports.getBrowser = getBrowser;
+exports.getDiffDay = getDiffDay;

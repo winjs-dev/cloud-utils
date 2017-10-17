@@ -1,5 +1,5 @@
 /*!
- * cloud-utils v1.1.1 
+ * cloud-utils v1.1.3 
  * (c) 2017 liwb
  * A collection of utils
  * Released under the MIT License.
@@ -1234,73 +1234,4 @@ function getDiffDay(startDay, endDay) {
   return Math.abs(endDay - startDay) / (24 * 1000 * 3600);
 }
 
-var utils = {
-  // 加密算法类
-  encrypt: encrypt,
-
-  // 格式化类
-  formatBankCard: formatBankCard,
-  formatMoney: formatMoney,
-  formatPhone: formatPhone,
-
-  // 浏览器地址相关参数
-  getLocationHrefParam: getLocationHrefParam,
-  getLocationSearchParam: getLocationSearchParam,
-  getUrlNames: getUrlNames,
-
-  // 随机数类
-  generateGUID: generateGUID,
-  getRandomInt: getRandomInt,
-
-  // 转义字符
-  htmlDecode: htmlDecode,
-  htmlEncode: htmlEncode,
-
-  // 内核、设备等，如微信，支付宝
-  getDevice: getDevice,
-  getBrowser: getBrowser,
-  inAlipay: inAlipay,
-  inWeixin: inWeixin,
-
-  // 验证类
-  isCardId: isCardId,
-  isDigit: isDigit,
-  isEmptyObject: isEmptyObject,
-  isLeapYear: isLeapYear,
-  isLetters: isLetters,
-  isLicenseNo: isLicenseNo,
-  isMobile: isMobile,
-  isValidDate: isValidDate,
-  isValidEmail: isValidEmail,
-  isValidPassword: isValidPassword,
-  isValidQQ: isValidQQ,
-  isValidURI: isValidURI,
-  isValidZipcode: isValidZipcode,
-
-  // 计算类或数学类
-  accAdd: accAdd,
-  accDiv: accDiv,
-  accMul: accMul,
-  accSub: accSub,
-  preZeroFill: preZeroFill,
-
-  // 时间类
-  formatDate: formatDate,
-  formatTimeAgo: formatTimeAgo,
-  formatDateToTimeStamp: formatDateToTimeStamp,
-  getDiffDay: getDiffDay,
-
-  // 其他
-  bytesToSize: bytesToSize,
-  dataURLToBlob: dataURLToBlob,
-  getPixelRatio: getPixelRatio,
-  insertAtCaret: insertAtCaret,
-  addChineseUnit: addChineseUnit,
-  appendStockSuffix: appendStockSuffix,
-  extend: extend,
-  formatCopyfilesPath: formatCopyfilesPath
-};
-
-utils.version = '1.1.0';
-
-export default utils;
+export { accAdd, accDiv, accMul, accSub, addChineseUnit, appendStockSuffix, encrypt, extend, formatBankCard, formatDate, formatTimeAgo, formatDateToTimeStamp, formatMoney, formatPhone, formatCopyfilesPath, getLocationHrefParam, getLocationSearchParam, getUrlNames, generateGUID, getRandomInt, htmlDecode, htmlEncode, inAlipay, inWeixin, isCardId, isDigit, isEmptyObject, isLeapYear, isLetters, isLicenseNo, isMobile, isValidDate, isValidEmail, isValidPassword, isValidQQ, isValidURI, isValidZipcode, preZeroFill, bytesToSize, dataURLToBlob, getPixelRatio, insertAtCaret, getDevice, getBrowser, getDiffDay };
