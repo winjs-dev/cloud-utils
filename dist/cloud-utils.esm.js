@@ -1,5 +1,5 @@
 /*!
- * cloud-utils v1.1.3 
+ * cloud-utils v1.1.4 
  * (c) 2017 liwb
  * A collection of utils
  * Released under the MIT License.
@@ -492,7 +492,7 @@ function formatDateToTimeStamp(time) {
   if (pattern.test(time)) {
     unixTime = time.replace(pattern, '/');
   } else {
-    // 若有’-‘，则不处理
+    // 若无’-‘，则不处理
     if (!~time.indexOf('-')) {
       year = time.slice(0, 4);
       month = time.slice(4, 6);

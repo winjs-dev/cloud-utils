@@ -2,6 +2,7 @@ lib
 coverage
 dist/*.gz
 dist/*.map
+docs/*
 docs/_book
 test/e2e/report
 test/e2e/screenshots
@@ -12,3 +13,4 @@ node_modules
 .idea
 .project
 .happypack
+docs/fonts/

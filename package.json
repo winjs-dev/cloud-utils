@@ -48,7 +48,8 @@
   },
   "scripts": {
     "build": "node build/build.js",
-    "gen:docs": "node_modules/.bin/jsdoc -c jsdoc.json",
+    "gen:docs": "./node_modules/.bin/jsdoc -c jsdoc.json",
+    "docs:deploy": "bash ./deploy-docs.sh",
     "lint": "eslint --fix .js src",
     "deploy": "sh build/release.sh"
   }

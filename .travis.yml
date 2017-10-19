@@ -15,7 +15,7 @@ cache:
   - $HOME/.yarn-cache
 
 script:
-  - npm run deploy
+  - npm run build
 
 branches:
   only:

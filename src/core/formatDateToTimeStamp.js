@@ -38,7 +38,7 @@ function formatDateToTimeStamp(time) {
   if (pattern.test(time)) {
     unixTime = time.replace(pattern, '/');
   } else {
-    // 若有’-‘，则不处理
+    // 若无’-‘，则不处理
     if (!~time.indexOf('-')) {
       year = time.slice(0, 4);
       month = time.slice(4, 6);
