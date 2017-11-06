@@ -2,7 +2,7 @@ lib
 coverage
 dist/*.gz
 dist/*.map
-docs/*
+docs
 docs/_book
 test/e2e/report
 test/e2e/screenshots

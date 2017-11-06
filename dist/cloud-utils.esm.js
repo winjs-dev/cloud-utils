@@ -1,5 +1,5 @@
 /*!
- * cloud-utils v1.1.5 
+ * cloud-utils v1.1.6 
  * (c) 2017 liwb
  * A collection of utils
  * Released under the MIT License.
@@ -1263,7 +1263,6 @@ function hasClass(el, cls) {
  * @since 1.1.5
  * @param el HTML元素
  * @param cls css类名
- * @returns {boolean}
  * @example
  *
  * <div class="box flex"></div>
@@ -1302,7 +1301,6 @@ var trim = function(string) {
  * @since 1.1.5
  * @param el HTML元素
  * @param cls css类名
- * @returns {boolean}
  * @example
  *
  * <div class="box flex"></div>

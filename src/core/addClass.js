@@ -6,7 +6,6 @@ import hasClass from './hasClass';
  * @since 1.1.5
  * @param el HTML元素
  * @param cls css类名
- * @returns {boolean}
  * @example
  *
  * <div class="box flex"></div>
