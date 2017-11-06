@@ -14,3 +14,4 @@ node_modules
 .project
 .happypack
 docs/fonts/
+npm-debug.log
