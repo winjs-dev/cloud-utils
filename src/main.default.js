@@ -44,6 +44,9 @@ import insertAtCaret from './core/insertAtCaret';
 import getDevice from './core/getDevice';
 import getBrowser from './core/getBrowser';
 import getDiffDay from './core/getDiffDay';
+import addClass from './core/addClass';
+import hasClass from './core/hasClass';
+import removeClass from './core/removeClass';
 
 const utils = {
   // 加密算法类
@@ -100,6 +103,11 @@ const utils = {
   formatTimeAgo,
   formatDateToTimeStamp,
   getDiffDay,
+
+  // dom
+  addClass,
+  hasClass,
+  removeClass,
 
   // 其他
   bytesToSize,

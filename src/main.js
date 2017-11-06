@@ -43,3 +43,6 @@ export {default as insertAtCaret} from './core/insertAtCaret';
 export {default as getDevice} from './core/getDevice';
 export {default as getBrowser} from './core/getBrowser';
 export {default as getDiffDay} from './core/getDiffDay';
+export {default as addClass} from './core/addClass';
+export {default as hasClass} from './core/hasClass';
+export {default as removeClass} from './core/removeClass';

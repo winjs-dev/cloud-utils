@@ -1,5 +1,5 @@
 /*!
- * cloud-utils v1.1.4 
+ * cloud-utils v1.1.5 
  * (c) 2017 liwb
  * A collection of utils
  * Released under the MIT License.
@@ -1240,6 +1240,103 @@ function getDiffDay(startDay, endDay) {
   return Math.abs(endDay - startDay) / (24 * 1000 * 3600);
 }
 
+/**
+ * dom操作，元素是包含某个class
+ *
+ * @since 1.1.5
+ * @param el HTML元素
+ * @param cls css类名
+ * @returns {boolean}
+ * @example
+ *
+ * <div class="box flex"></div>
+ * hasClass(document.querySelector('.box'), 'flex');
+ * // => true
+ */
+function hasClass(el, cls) {
+  if (!el || !cls) { return false; }
+  if (cls.indexOf(' ') !== -1) { throw new Error('className should not contain space.'); }
+  if (el.classList) {
+    return el.classList.contains(cls);
+  } else {
+    return (' ' + el.className + ' ').indexOf(' ' + cls + ' ') > -1;
+  }
+}
+
+/**
+ * dom操作，元素添加某个class
+ *
+ * @since 1.1.5
+ * @param el HTML元素
+ * @param cls css类名
+ * @returns {boolean}
+ * @example
+ *
+ * <div class="box flex"></div>
+ * addClass(document.querySelector('.box'), 'flex1');
+ * // => <div class="box flex flex1"></div>
+ */
+function addClass(el, cls) {
+  if (!el) { return; }
+  var curClass = el.className;
+  var classes = (cls || '').split(' ');
+
+  for (var i = 0, j = classes.length; i < j; i++) {
+    var clsName = classes[i];
+    if (!clsName) { continue; }
+
+    if (el.classList) {
+      el.classList.add(clsName);
+    } else {
+      if (!hasClass(el, clsName)) {
+        curClass += ' ' + clsName;
+      }
+    }
+  }
+  if (!el.classList) {
+    el.className = curClass;
+  }
+}
+
+var trim = function(string) {
+  return (string || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '');
+};
+
+/**
+ * dom操作，元素删除某个class
+ *
+ * @since 1.1.5
+ * @param el HTML元素
+ * @param cls css类名
+ * @returns {boolean}
+ * @example
+ *
+ * <div class="box flex"></div>
+ * removeClass(document.querySelector('.box'), 'flex');
+ * // => <div class="box"></div>
+ */
+function removeClass(el, cls) {
+  if (!el || !cls) { return; }
+  var classes = cls.split(' ');
+  var curClass = ' ' + el.className + ' ';
+
+  for (var i = 0, j = classes.length; i < j; i++) {
+    var clsName = classes[i];
+    if (!clsName) { continue; }
+
+    if (el.classList) {
+      el.classList.remove(clsName);
+    } else {
+      if (hasClass(el, clsName)) {
+        curClass = curClass.replace(' ' + clsName + ' ', ' ');
+      }
+    }
+  }
+  if (!el.classList) {
+    el.className = trim(curClass);
+  }
+}
+
 exports.accAdd = accAdd;
 exports.accDiv = accDiv;
 exports.accMul = accMul;
@@ -1285,6 +1382,9 @@ exports.insertAtCaret = insertAtCaret;
 exports.getDevice = getDevice;
 exports.getBrowser = getBrowser;
 exports.getDiffDay = getDiffDay;
+exports.addClass = addClass;
+exports.hasClass = hasClass;
+exports.removeClass = removeClass;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
