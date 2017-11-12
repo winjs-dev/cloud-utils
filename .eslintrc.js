@@ -27,9 +27,7 @@ module.exports = {
   // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
   extends: 'standard',
   // required to lint *.vue files
-  plugins: [
-
-  ],
+  plugins: [],
 
   /** add your custom rules here
    *  'off' 或 0 - 关闭规则

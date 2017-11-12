@@ -1,5 +1,5 @@
 /*!
- * cloud-utils v1.1.6 
+ * cloud-utils v1.1.7 
  * (c) 2017 liwb
  * A collection of utils
  * Released under the MIT License.
@@ -1329,4 +1329,19 @@ function removeClass(el, cls) {
   }
 }
 
-export { accAdd, accDiv, accMul, accSub, addChineseUnit, appendStockSuffix, encrypt, extend, formatBankCard, formatDate, formatTimeAgo, formatDateToTimeStamp, formatMoney, formatPhone, formatCopyfilesPath, getLocationHrefParam, getLocationSearchParam, getUrlNames, generateGUID, getRandomInt, htmlDecode, htmlEncode, inAlipay, inWeixin, isCardId, isDigit, isEmptyObject, isLeapYear, isLetters, isLicenseNo, isMobile, isValidDate, isValidEmail, isValidPassword, isValidQQ, isValidURI, isValidZipcode, preZeroFill, bytesToSize, dataURLToBlob, getPixelRatio, insertAtCaret, getDevice, getBrowser, getDiffDay, addClass, hasClass, removeClass };
+/**
+ * 中划线转换小驼峰
+ *
+ * @since 1.1.7
+ * @param {string} variable
+ * @returns {string}
+ * @example
+ *
+ * toCamelCaseVar('get_account_list');
+ * // => getAccountList
+ */
+function toCamelCaseVar (variable) {
+  return variable.replace(/_+[a-zA-Z]/g, function (str, index) { return index ? str.substr(-1).toUpperCase() : str; });
+}
+
+export { accAdd, accDiv, accMul, accSub, addChineseUnit, appendStockSuffix, encrypt, extend, formatBankCard, formatDate, formatTimeAgo, formatDateToTimeStamp, formatMoney, formatPhone, formatCopyfilesPath, getLocationHrefParam, getLocationSearchParam, getUrlNames, generateGUID, getRandomInt, htmlDecode, htmlEncode, inAlipay, inWeixin, isCardId, isDigit, isEmptyObject, isLeapYear, isLetters, isLicenseNo, isMobile, isValidDate, isValidEmail, isValidPassword, isValidQQ, isValidURI, isValidZipcode, preZeroFill, bytesToSize, dataURLToBlob, getPixelRatio, insertAtCaret, getDevice, getBrowser, getDiffDay, addClass, hasClass, removeClass, toCamelCaseVar };

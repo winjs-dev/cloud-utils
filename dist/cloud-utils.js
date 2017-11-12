@@ -1,5 +1,5 @@
 /*!
- * cloud-utils v1.1.6 
+ * cloud-utils v1.1.7 
  * (c) 2017 liwb
  * A collection of utils
  * Released under the MIT License.
@@ -7,7 +7,7 @@
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
 	typeof define === 'function' && define.amd ? define(['exports'], factory) :
-	(factory((global.cloudUtils = global.cloudUtils || {})));
+	(factory((global.CloudUtils = {})));
 }(this, (function (exports) { 'use strict';
 
 /**
@@ -1335,6 +1335,21 @@ function removeClass(el, cls) {
   }
 }
 
+/**
+ * 中划线转换小驼峰
+ *
+ * @since 1.1.7
+ * @param {string} variable
+ * @returns {string}
+ * @example
+ *
+ * toCamelCaseVar('get_account_list');
+ * // => getAccountList
+ */
+function toCamelCaseVar (variable) {
+  return variable.replace(/_+[a-zA-Z]/g, function (str, index) { return index ? str.substr(-1).toUpperCase() : str; });
+}
+
 exports.accAdd = accAdd;
 exports.accDiv = accDiv;
 exports.accMul = accMul;
@@ -1383,6 +1398,7 @@ exports.getDiffDay = getDiffDay;
 exports.addClass = addClass;
 exports.hasClass = hasClass;
 exports.removeClass = removeClass;
+exports.toCamelCaseVar = toCamelCaseVar;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 

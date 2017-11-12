@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 cd docs
-rm -rf _book
 npm run gen:docs
 cd _book
 git init

@@ -1,10 +1,7 @@
 {
-  "presets": ["es2015"],
-  "plugins": ["babel-plugin-espower"],
-  "env": {
-    "test": {
-      "plugins": ["istanbul"],
-      "presets": ["power-assert"]
-    }
-  }
+  "presets": [
+    ["env"],
+    "stage-2"
+  ],
+  "plugins": ["transform-runtime"]
 }

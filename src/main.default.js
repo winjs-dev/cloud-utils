@@ -47,6 +47,7 @@ import getDiffDay from './core/getDiffDay';
 import addClass from './core/addClass';
 import hasClass from './core/hasClass';
 import removeClass from './core/removeClass';
+import toCamelCaseVar from './core/toCamelCaseVar';
 
 const utils = {
   // 加密算法类
@@ -117,7 +118,8 @@ const utils = {
   addChineseUnit,
   appendStockSuffix,
   extend,
-  formatCopyfilesPath
+  formatCopyfilesPath,
+  toCamelCaseVar
 };
 
 utils.version = '__VERSION__';
