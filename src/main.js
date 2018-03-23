@@ -47,3 +47,4 @@ export {default as addClass} from './core/addClass';
 export {default as hasClass} from './core/hasClass';
 export {default as removeClass} from './core/removeClass';
 export {default as toCamelCaseVar} from './core/toCamelCaseVar';
+export {default as formatNumber} from './core/formatNumber';

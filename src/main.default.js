@@ -48,6 +48,7 @@ import addClass from './core/addClass';
 import hasClass from './core/hasClass';
 import removeClass from './core/removeClass';
 import toCamelCaseVar from './core/toCamelCaseVar';
+import formatNumber from './core/formatNumber';
 
 const utils = {
   // 加密算法类
@@ -57,6 +58,7 @@ const utils = {
   formatBankCard,
   formatMoney,
   formatPhone,
+  formatNumber,
 
   // 浏览器地址相关参数
   getLocationHrefParam,
