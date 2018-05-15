@@ -49,6 +49,8 @@ import hasClass from './core/hasClass';
 import removeClass from './core/removeClass';
 import toCamelCaseVar from './core/toCamelCaseVar';
 import formatNumber from './core/formatNumber';
+import compareVersion from './core/compareVersion';
+import getIn from './core/getIn';
 
 const utils = {
   // 加密算法类
@@ -121,7 +123,9 @@ const utils = {
   appendStockSuffix,
   extend,
   formatCopyfilesPath,
-  toCamelCaseVar
+  toCamelCaseVar,
+  compareVersion,
+  getIn
 };
 
 utils.version = '__VERSION__';
