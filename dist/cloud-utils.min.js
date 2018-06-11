@@ -1,5 +1,5 @@
 /*!
- * cloud-utils v1.1.9 
+ * cloud-utils v1.2.0 
  * (c) 2018 liwb
  * A collection of utils
  * Released under the MIT License.
