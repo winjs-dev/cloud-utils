@@ -50,3 +50,5 @@ export {default as toCamelCaseVar} from './core/toCamelCaseVar';
 export {default as formatNumber} from './core/formatNumber';
 export {default as compareVersion} from './core/compareVersion';
 export {default as getIn} from './core/getIn';
+export {default as rgbToHex} from './core/rgbToHex';
+export {default as hexToRgb} from './core/hexToRgb';

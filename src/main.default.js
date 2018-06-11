@@ -51,6 +51,8 @@ import toCamelCaseVar from './core/toCamelCaseVar';
 import formatNumber from './core/formatNumber';
 import compareVersion from './core/compareVersion';
 import getIn from './core/getIn';
+import rgbToHex from './core/rgbToHex';
+import hexToRgb from './core/hexToRgb';
 
 const utils = {
   // 加密算法类
@@ -125,7 +127,9 @@ const utils = {
   formatCopyfilesPath,
   toCamelCaseVar,
   compareVersion,
-  getIn
+  getIn,
+  rgbToHex,
+  hexToRgb
 };
 
 utils.version = '__VERSION__';
