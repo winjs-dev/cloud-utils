@@ -1,5 +1,5 @@
 /*!
- * cloud-utils v1.2.0 
+ * cloud-utils v1.2.1 
  * (c) 2018 liwb
  * A collection of utils
  * Released under the MIT License.
@@ -1451,6 +1451,187 @@ function getIn(p, o) {
   }, o);
 }
 
+/**
+ * RGB 转换为 Hex
+ *
+ * @since 1.2.0
+ * @param r r值
+ * @param g g值
+ * @param b b值
+ * @returns {string} Hex值
+ * @example
+ * rgbToHex(0,0,0);
+ * // => #000000
+ */
+function rgbToHex(r, g, b) {
+  return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+}
+
+/**
+ * Hex 转换为 Rgb
+ *
+ * @since 1.2.0
+ * @param hex
+ * @returns {*}
+ * @example
+ *
+ * hexToRgb("#0033ff").g;
+ * // => 51
+ */
+function hexToRgb(hex) {
+  // Expand shorthand form (e.g. "03F") to full form (e.g. "0033FF")
+  var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+  hex = hex.replace(shorthandRegex, function (m, r, g, b) {
+    return r + r + g + g + b + b;
+  });
+
+  var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
+
+/**
+ * Anagrams of string（带有重复项）
+ * 使用递归。对于给定字符串中的每个字母，为字母创建字谜。使用map（）将字母与每部分字谜组合，然后使用reduce（）将所有字谜组合到一个数组中，最基本情况是字符串长度等于2或1。
+ *
+ * @since 1.2.1
+ * @param str
+ * @returns {*}
+ * @example
+ *
+ * anagrams('abc');
+ * // => ['abc','acb','bac','bca','cab','cba']
+ */
+function anagrams(str) {
+  if (str.length <= 2) { return str.length === 2 ? [str, str[1] + str[0]] : [str]; }
+
+  return str.split('').reduce(function (acc, letter, i) { return acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map(function (val) { return letter + val; })); }, []);
+}
+
+/**
+ * 大写每个单词的首字母
+ *
+ * @since 1.2.1
+ * @param str
+ * @returns {string|*|void|XML}
+ * @example
+ *
+ * capitalizeEveryWord('hello world!');
+ * // => 'Hello World!'
+ */
+function capitalizeEveryWord(str) {
+  return str.replace(/\b[a-z]/g, function (char) { return char.toUpperCase(); });
+}
+
+/**
+ * 斐波那契数组生成器
+ * 创建一个特定长度的空数组，初始化前两个值（0和1）。使用Array.reduce（）向数组中添加值，后面的一个数等于前面两个数相加之和（前两个除外）。
+ *
+ * @since 1.2.1
+ * @param num
+ * @returns {*}
+ * @example
+ *
+ * fibonacci(5);
+ * // => [0,1,1,2,3]
+ */
+function fibonacci(num) {
+  return Array(num).fill(0).reduce(function (acc, val, i) { return acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i); }, []);
+}
+
+/**
+ * 获取滚动位置
+ * 如果已定义，请使用pageXOffset和pageYOffset，否则使用scrollLeft和scrollTop，可以省略el来使用window的默认值。
+ *
+ * @since 1.2.1
+ * @param el
+ * @returns {{x: Number, y: Number}}
+ * @example
+ *
+ * getScrollPos();
+ * // => {x: 0, y: 200}
+ */
+function getScrollPos(el) {
+  if ( el === void 0 ) el = window;
+
+  return ({
+    x: (el.pageXOffset !== undefined) ? el.pageXOffset : el.scrollLeft,
+    y: (el.pageYOffset !== undefined) ? el.pageYOffset : el.scrollTop
+  });
+}
+
+/**
+ * 获取数组的最后一项
+ *
+ * @since 1.2.1
+ * @param array
+ * @returns {boolean}
+ * @example
+ *
+ * tail(['1,2,3']);
+ * // => '3';
+ */
+function last(array) {
+  return Array.isArray(array) && array.slice(-1)[0];
+}
+
+/**
+ * 测试函数所花费的时间
+ *
+ * @since 1.2.1
+ * @param callback
+ * @returns {*}
+ * @example
+ *
+ * timeTaken(() => Math.pow(2, 10));
+ * // => 1024
+ */
+function timeTaken(callback) {
+  if (typeof callback !== 'function') { throw new Error('callback 必须为可执行的函数'); }
+  console.time('timeTaken');
+  var r = callback();
+  console.timeEnd('timeTaken');
+
+  return r;
+}
+
+/**
+ * 数组转换为键值对的对象
+ *
+ * @since 1.2.1
+ * @param array
+ * @returns {*}
+ * @example
+ *
+ * objectFromPairs([['a',1],['b',2]]);
+ * // => {a: 1, b: 2}
+ */
+function objectFromPairs(array) {
+  return Array.isArray(array) && array.reduce(function (a, v) { return (a[v[0]] = v[1], a); }, {});
+}
+
+/**
+ * 滚动到顶部
+ * 使用document.documentElement.scrollTop或document.body.scrollTop获取到顶部的距离。从顶部滚动一小部分距离。
+ 使用window.requestAnimationFrame（）来滚动。
+ *
+ * @since 1.2.1
+ * @example
+ *
+ * scrollToTop();
+ */
+function scrollToTop() {
+  var c = document.documentElement.scrollTop || document.body.scrollTop;
+
+  if (c > 0) {
+    window.requestAnimationFrame(scrollToTop);
+    window.scrollTo(0, c - c / 8);
+  }
+}
+
 exports.accAdd = accAdd;
 exports.accDiv = accDiv;
 exports.accMul = accMul;
@@ -1503,3 +1684,13 @@ exports.toCamelCaseVar = toCamelCaseVar;
 exports.formatNumber = formatNumber;
 exports.compareVersion = compareVersion;
 exports.getIn = getIn;
+exports.rgbToHex = rgbToHex;
+exports.hexToRgb = hexToRgb;
+exports.anagrams = anagrams;
+exports.capitalizeEveryWord = capitalizeEveryWord;
+exports.fibonacci = fibonacci;
+exports.getScrollPos = getScrollPos;
+exports.last = last;
+exports.timeTaken = timeTaken;
+exports.objectFromPairs = objectFromPairs;
+exports.scrollToTop = scrollToTop;
