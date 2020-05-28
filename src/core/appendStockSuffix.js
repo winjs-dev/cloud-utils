@@ -1,5 +1,5 @@
 /**
- * 自动为股票代码添加市场后缀
+ * 识别股票代码添加市场后缀
  *
  * @param {string} stock 股票代码
  * @returns {string}

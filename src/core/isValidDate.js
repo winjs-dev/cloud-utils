@@ -1,5 +1,6 @@
 /**
- * 是否为有效的日期，格式为yyyy-mm-dd
+ * 是否为有效的日期格式<br>
+ * 格式为 yyyy-mm-dd 或 yyyy-mm-dd HH:mm:ss
  *
  * @param {string} val
  * @returns {boolean}
@@ -9,9 +10,10 @@
  * // => true
  */
 function isValidDate(val) {
-  const reg = /^\d{4}-\d{2}-\d{2}$/;
+  const dateReg = /^\d{4}-\d{2}-\d{2}$/;
+  const timeReg = /^(\d{4})\-(\d{2})\-(\d{2}) (\d{2})(?:\:\d{2}|:(\d{2}):(\d{2}))$/;
 
-  return reg.test(val);
+  return dateReg.test(val) || timeReg.test(val);
 }
 
 export default isValidDate;

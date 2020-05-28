@@ -4,7 +4,7 @@ const trim = function(string) {
 };
 
 /**
- * dom操作，元素删除某个class
+ * Dom 操作，元素删除某个 class
  *
  * @since 1.1.5
  * @param el HTML元素

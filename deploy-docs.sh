@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 cd docs
 npm run gen:docs
 cd _book

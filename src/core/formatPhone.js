@@ -10,6 +10,8 @@
  * // => 158****4903
  */
 function formatPhone(phone, symbol = '****') {
+  if (typeof phone !== 'string') throw new TypeError('数据类型必须是 string');
+
   return phone.replace(/(\d{3})\d{4}(\d{4})/, `$1${symbol}$2`);
 }
 

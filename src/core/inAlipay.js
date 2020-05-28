@@ -10,7 +10,7 @@
 function inAlipay() {
   if (typeof navigator === 'undefined') return;
 
-  var ua = navigator.userAgent.toLowerCase();
+  const ua = navigator.userAgent.toLowerCase();
   return ua.indexOf('alipayclient') !== -1;
 }
 

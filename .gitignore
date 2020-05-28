@@ -2,7 +2,6 @@ lib
 coverage
 dist/*.gz
 dist/*.map
-docs
 node_modules
 .DS_Store
 *~
@@ -11,3 +10,6 @@ node_modules
 .project
 .happypack
 npm-debug.log
+yarn.lock
+dist/
+.history

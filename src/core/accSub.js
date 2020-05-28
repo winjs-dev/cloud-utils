@@ -7,7 +7,7 @@
  * @returns {number} arg1减去arg2的精确结果
  * @example
  *
- * accDiv(0.3, 0.2)
+ * accSub(0.3, 0.2)
  * // => 0.1
  */
 function accSub(arg1, arg2) {

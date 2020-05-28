@@ -1,5 +1,5 @@
 /**
- * 是否为有效的url<br>
+ * 是否为有效的 url<br>
  *
  * 支持类型:<br>
  * http(s)://(username:password@)(www.)domain.(com/co.uk)(/...)<br>
@@ -10,7 +10,7 @@
  * telnet://<user>:<password>@<host>[:<port>/]<br>
  * smb://[<user>@]<host>[:<port>][/[<path>]][?<param1>=<value1>[;<param2>=<value2>]]<br>
  *
- * @param {string} val
+ * @param {string} url
  * @returns {*}
  * @example
  *

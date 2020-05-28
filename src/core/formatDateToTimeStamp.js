@@ -21,7 +21,7 @@
  * // => 1453780800000
  */
 function formatDateToTimeStamp(time) {
-  if (typeof time !== 'string') throw new Error('time数据类型必须是string');
+  if (typeof time !== 'string') throw new TypeError('数据类型必须是 string');
 
   // 2016-05-23 13:58:02.0
   if (time.length > 19) {

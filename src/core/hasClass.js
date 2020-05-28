@@ -1,5 +1,5 @@
 /**
- * dom操作，元素是包含某个class
+ * Dom 操作，元素是包含某个 class
  *
  * @since 1.1.5
  * @param el HTML元素

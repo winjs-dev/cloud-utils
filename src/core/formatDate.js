@@ -3,7 +3,7 @@
  * 月(M)、日(d)、12小时(h)、24小时(H)、分(m)、秒(s)、周(E)、季度(q)可以用 1-2 个占位符<br>
  * 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)
  *
- * @param {string} date
+ * @param {string | number} date string支持形式：20160126 12:00:00，2016-01-26 12:00:00，2016.01.26 12:00:00，20160126，2016-01-26 12:00:00.0
  * @param {string} fmt
  * @returns {string}
  * @example
@@ -24,8 +24,11 @@
  * // => 2006-7-2 8:9:4.18
  */
 function formatDate(date = new Date(), fmt = 'yyyy-MM-dd HH:mm:ss') {
-  date = (typeof date === 'number' || typeof date === 'string') ? new Date(date) : date;
-
+  if (typeof date === 'string') {
+    date = new Date(formatTimeByPattern(date));
+  } else if (typeof date === 'number') {
+    date = new Date(date);
+  }
   var o = {
     'M+': date.getMonth() + 1, // 月份
     'd+': date.getDate(), // 日
@@ -61,6 +64,38 @@ function formatDate(date = new Date(), fmt = 'yyyy-MM-dd HH:mm:ss') {
   }
 
   return fmt;
+}
+
+// val 字符串转换成 / 连接
+// 20160126 12:00:00
+// 2016-01-26 12:00:00
+// 2016.01.26 12:00:00
+// 20160126
+// 2016-01-26 12:00:00.0
+function formatTimeByPattern(val) {
+  // 2016-05-23 13:58:02.0
+  if (val.length > 19) {
+    val = val.substring(0, 19);
+  }
+
+  var pattern = /-|\./g;
+  var year;
+  var month;
+  var day;
+  var reset;
+
+  if (pattern.test(val)) {
+    return val.replace(pattern, '/');
+  } else {
+    // 若无’-‘，则不处理
+    if (!~val.indexOf('-')) {
+      year = val.slice(0, 4);
+      month = val.slice(4, 6);
+      day = val.slice(6, 8);
+      reset = val.slice(8);
+      return year + '/' + month + '/' + day + reset;
+    }
+  }
 }
 
 export default formatDate;

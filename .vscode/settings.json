@@ -1,9 +1,0 @@
-{
-  "guides.normal.color.dark": "rgba(91, 91, 91, 0.6)",
-    "guides.normal.color.light": "rgba(220, 220, 220, 0.7)",
-    "guides.active.color.dark": "rgba(210, 110, 210, 0.6)",
-    "guides.active.color.light": "rgba(200, 100, 100, 0.7)",
-    "guides.active.style": "dashed",
-    "guides.normal.style": "dashed",
-    "guides.stack.style": "dashed"
-}

@@ -1,15 +1,16 @@
 /**
- * 是否为有效的密码(6-16位字母加数字组合，不能包含空格)
+ * 是否为有效的密码强度，最少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符
  *
  * @param {string} val
+ * @param {number} minLength 最小位数
  * @returns {boolean}
  * @example
  *
- * isValidPassword('a23456abc');
+ * isValidPassword('Kd@curry666');
  * // => true
  */
-function isValidPassword(val) {
-  const reg = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{6,16}$/;
+function isValidPassword(val, minLength = 6) {
+  const reg = new RegExp(`^.*(?=.{${minLength},})(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*? ]).*$`);
 
   return reg.test(val);
 }

@@ -14,17 +14,16 @@
  * // => 2.00
  */
 
-function formatNumber(number, decimals, decPoint, thousandsSep, roundTag) {
+function formatNumber(number, decimals = 2, decPoint = '.', thousandsSep = ',', roundTag = 'ceil') {
   number = (number + '').replace(/[^0-9+-Ee.]/g, '');
-  roundTag = roundTag || 'ceil'; // 'ceil','floor','round'
   const n = !isFinite(+number) ? 0 : +number;
   const prec = !isFinite(+decimals) ? 0 : Math.abs(decimals);
-  const sep = (typeof thousandsSep === 'undefined') ? ',' : thousandsSep;
-  const dec = (typeof decPoint === 'undefined') ? '.' : decPoint;
+  const sep = thousandsSep || ',';
+  const dec = decPoint || '.';
   const re = /(-?\d+)(\d{3})/;
   let s = '';
   const toFixedFix = function (n, prec) {
-    var k = Math.pow(10, prec);
+    const k = Math.pow(10, prec);
     return '' + parseFloat(Math[roundTag](parseFloat((n * k).toFixed(prec * 2))).toFixed(prec * 2)) / k;
   };
   s = (prec ? toFixedFix(n, prec) : '' + Math.round(n)).split('.');

@@ -6,25 +6,16 @@ const node = require('rollup-plugin-node-resolve')
 const pack = require('../package.json')
 const version = process.env.VERSION || pack.version
 
-function toUpper(_, c) {
-  return c ? c.toUpperCase() : ''
-}
-
-const classifyRE = /(?:^|[-_/])(\w)/g
-
-function classify(str) {
-  return str.replace(classifyRE, toUpper)
-}
-
-const moduleName = classify(pack.name)
+const moduleName = 'cloud-utils';
 
 const banner =
-  '/*!\n' +
-  ` * ${pack.name} v${version} \n` +
-  ` * (c) ${new Date().getFullYear()} ${pack.author.name}\n` +
-  ` * ${pack.description}\n` +
-  ` * Released under the ${pack.license} License.\n` +
-  ' */';
+  `/*!
+ * ${moduleName} v${version} (https://github.com/cloud-templates/cloud-utils)
+ * API https://cloud-templates.github.io/cloud-utils/
+ * Copyright 2017-${(new Date).getFullYear()} ${pack.author.name}. All Rights Reserved
+ * Licensed under ${pack.license} (https://github.com/cloud-templates/cloud-utils/blob/master/LICENSE)
+ */
+ `
 
 const resolve = (p) => {
   return path.resolve(__dirname, '../', p)
@@ -34,7 +25,7 @@ const builds = {
   // Runtime only (CommonJS). Used by bundlers e.g. Webpack & Browserify
   commonjs: {
     entry: resolve('src/main.js'),
-    dest: resolve(`dist/${pack.name}.common.js`),
+    dest: resolve(`dist/${moduleName}.common.js`),
     format: 'cjs',
     banner
   },
@@ -42,14 +33,14 @@ const builds = {
   // e.g. Rollup & Webpack 2
   esm: {
     entry: resolve('src/main.js'),
-    dest: resolve(`dist/${pack.name}.esm.js`),
+    dest: resolve(`dist/${moduleName}.esm.js`),
     format: 'es',
     banner
   },
   // runtime-only production build (Browser)
   production: {
     entry: resolve('src/main.js'),
-    dest: resolve(`dist/${pack.name}.min.js`),
+    dest: resolve(`dist/${moduleName}.min.js`),
     format: 'umd',
     env: 'production',
     moduleName,
@@ -58,7 +49,7 @@ const builds = {
   // runtime-only build (Browser)
   development: {
     entry: resolve('src/main.js'),
-    dest: resolve(`dist/${pack.name}.js`),
+    dest: resolve(`dist/${moduleName}.js`),
     format: 'umd',
     env: 'development',
     moduleName,

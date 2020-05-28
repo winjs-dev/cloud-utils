@@ -2,32 +2,19 @@
 // http://eslint.cn/docs/user-guide/configuring 中文
 
 module.exports = {
-  root: true,
-  parser: 'babel-eslint',
   // JavaScript 语言选项
   parserOptions: {
     // ECMAScript 版本
     'ecmaVersion': 6,
     // ECMAScript 模块
     'sourceType': 'module',
-    // 想使用的额外的语言特性:
-    'ecmaFeatures': {
-      // 允许在全局作用域下使用 return 语句
-      'globalReturn': true,
-      // impliedStric
-      'impliedStrict': true,
-      // 启用 JSX
-      'jsx': true
-    }
   },
-  //环境定义了预定义的全局变量。更多在官网查看
   env: {
     'browser': true,
+    'node': true,
+    'es6': true
   },
-  // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
-  extends: 'standard',
-  // required to lint *.vue files
-  plugins: [],
+  extends: 'eslint:recommended',
 
   /** add your custom rules here
    *  'off' 或 0 - 关闭规则

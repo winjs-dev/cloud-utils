@@ -9,7 +9,7 @@
  * // => true
  */
 function isLeapYear(val) {
-  if (typeof val !== 'number') throw new Error('val必须为number类型');
+  if (typeof val !== 'number') throw new TypeError('数据类型必须是 number');
 
   if (val % 4 === 0 && val % 100 !== 0) {
     return true;
