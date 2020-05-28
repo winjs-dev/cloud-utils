@@ -88,8 +88,6 @@ export {default as isEmpty} from './core/isEmpty';
 export {default as merge} from './core/merge';
 export {default as only} from './core/only';
 export {default as isLightOS} from './core/isLightOS';
-export {default as nativeJSBridge} from './core/nativeJSBridge';
-export {default as nativeReady} from './core/nativeReady';
 export {default as combineURLs} from './core/combineURLs';
 export {default as inWeibo} from './core/inWeibo';
 export {default as dynamicLoadScript} from './core/dynamicLoadScript';
