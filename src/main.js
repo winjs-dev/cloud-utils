@@ -1,5 +1,3 @@
-import isPhoneX from './core/isPhoneX';
-
 export {default as accAdd} from './core/accAdd';
 export {default as accDiv} from './core/accDiv';
 export {default as accMul} from './core/accMul';

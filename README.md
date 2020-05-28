@@ -1,9 +1,9 @@
 # [cloud-utils](https://github.com/cloud-templates/cloud-utils)
 [![](https://img.shields.io/badge/Powered%20by-cloud--utils-brightgreen.svg)](https://github.com/cloud-templates/cloud-utils)
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yanhaijing/jslib-base/blob/master/LICENSE)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yanhaijing/cloud-templates/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/cloud-templates/cloud-utils.svg?branch=master)](https://travis-ci.org/cloud-templates/cloud-utils)
-[![npm](https://img.shields.io/badge/npm-0.1.0-orange.svg)](https://www.npmjs.com/package/@liwb/cloud-utils)
-[![NPM downloads](http://img.shields.io/npm/dm/cloud-utils.svg?style=flat-square)](http://www.npmtrends.com/@liwb/cloud-utils)
+[![npm](https://img.shields.io/badge/npm-0.1.0-orange.svg)](https://www.npmjs.com/package/@winner-fed/cloud-utils)
+[![NPM downloads](http://img.shields.io/npm/dm/cloud-utils.svg?style=flat-square)](http://www.npmtrends.com/@winner-fed/cloud-utils)
 [![Coverage Status](https://coveralls.io/repos/github/cloud-templates/cloud-utils/badge.svg)](https://coveralls.io/github/cloud-templates/cloud-utils)
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/cloud-templates/cloud-utils.svg)](http://isitmaintained.com/project/cloud-templates/cloud-utils "Percentage of issues still open")
 
@@ -25,25 +25,25 @@
 通过 npm 下载安装代码
 
 ```bash
-$ npm install --save @liwb/cloud-utils
+$ npm install --save @winner-fed/cloud-utils
 ```
 
 如果你是 node 环境
 
 ```js
-var { formatDate } = require('@liwb/cloud-utils.common');
+var { formatDate } = require('@winner-fed/cloud-utils.common');
 ```
 
 如果你是 webpack 等环境
 
 ```js
-import { formatDate } from '@liwb/cloud-utils.esm';
+import { formatDate } from '@winner-fed/cloud-utils.esm';
 ```
 
 如果你是 requirejs 环境
 
 ```js
-requirejs(['node_modules/@liwb/cloud-utils/dist/cloud-utils.js'], function (utils) {
+requirejs(['node_modules/@winner-fed/cloud-utils/dist/cloud-utils.js'], function (utils) {
     var formatDate = utils.formatDate;
 })
 ```
@@ -51,7 +51,7 @@ requirejs(['node_modules/@liwb/cloud-utils/dist/cloud-utils.js'], function (util
 如果你是浏览器环境
 
 ```html
-<script src="node_modules/@liwb/cloud-utils/dist/cloud-utils.min.js"></script>
+<script src="node_modules/@winner-fed/cloud-utils/dist/cloud-utils.min.js"></script>
 
 <script>
     var utils = window['cloud-utils'];
