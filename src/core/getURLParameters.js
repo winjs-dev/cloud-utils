@@ -9,9 +9,9 @@
  */
 function getURLParameters(url = window.location.href) {
   if (typeof url !== 'string') throw new TypeError('数据类型必须是 string');
-  return url
-    .match(/([^?=&]+)(=([^&]*))/g)
-    .reduce((a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a), {});
+  let paramsArr = url.match(/([^?=&]+)(=([^&]*))/g)
+  return paramsArr ?
+    paramsArr.reduce((a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a), {}) : {}
 }
 
 export default getURLParameters;
