@@ -1856,11 +1856,23 @@ export declare function getImgBase64(url: string): Promise<string>
  * @param {*} value 正则校验变量
  * @return {boolean} 正则校验结果 true: 是emoji表情 false: 不是emoji表情
  */
-export function isEmoji(value: string): boolean
+export declare function isEmoji(value: string): boolean
 
 /**
  * 检查是否为特殊字符
  * @param {string} value 正则校验的变量
  * @returns {boolean} 正则校验结果 true: 是特殊字符 false: 不是特殊字符
  */
-export function isSpecialChar(value: string): boolean
+export declare function isSpecialChar(value: string): boolean
+
+/**
+ * 过滤对象中为空的属性
+ *
+ * @param obj
+ * @returns {*}
+ * @example
+ *
+ * filterEmptyPropObj({name: 'foo', sex: ''})
+ * // => {name: 'foo'}
+ */
+export declare function filterEmptyPropObj(obj: object): object;
