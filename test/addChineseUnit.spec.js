@@ -3,7 +3,7 @@ var {addChineseUnit} = require('../dist/cloud-utils');
 
 describe('#addChineseUnit() 为数字加上单位：万或亿', function () {
   it('addChineseUnit(1000.01) should return 1000.01', function () {
-    expect(addChineseUnit(1000.01)).to.eql(1000.01);
+    expect(addChineseUnit(1000.01)).to.eql('1000.01');
   });
 
   it('addChineseUnit(10000) should return 1万', function () {
@@ -22,7 +22,7 @@ describe('#addChineseUnit() 为数字加上单位：万或亿', function () {
     expect(addChineseUnit(400000000000000000000000)).to.eql('3999.99万亿亿');
   });
 
-  it('addChineseUnit(4000000000000000000000000) should return 4亿亿亿', function () {
-    expect(addChineseUnit(4000000000000000000000000)).to.eql('4亿亿亿');
+  it('addChineseUnit(4000000000000000000000000) should return 4万亿亿', function () {
+    expect(addChineseUnit(4000000000000000000000000)).to.eql('4万亿亿');
   });
 });

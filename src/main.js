@@ -125,3 +125,4 @@ export {default as getImgBase64} from './core/getImgBase64';
 export {default as exportXls} from './core/exportXls';
 export {default as isEmoji} from './core/isEmoji';
 export {default as isSpecialChar} from './core/isSpecialChar';
+export {default as filterEmptyPropObj} from './core/filterEmptyPropObj';
