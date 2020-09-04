@@ -16,12 +16,12 @@ function accMul(arg1, arg2) {
   var s2 = arg2.toString();
 
   try {
-    m += s1.split('.')[1].length;
+    s1.split('.')[1] && (m += s1.split('.')[1].length);
   } catch (e) {
     console.error(e);
   }
   try {
-    m += s2.split('.')[1].length;
+    s2.split('.')[1] && (m += s2.split('.')[1].length);
   } catch (e) {
     console.error(e);
   }
