@@ -1357,10 +1357,10 @@ export declare function trim(str: string, type: number): string;
  * Creates a new URL by combining the specified URLs
  *
  * @param {string} baseURL The base URL
- * @param {string} relativeURL The relative URL
+ * @param {string} relativeURLs The relative URL
  * @returns {string} The combined URL
  */
-export declare function combineURLs(baseURL: string, relativeURL: string): string;
+export declare function combineURLs(baseURL: string, relativeURLs: string): string;
 
 /**
  * 是否是微博内核
@@ -1876,3 +1876,19 @@ export declare function isSpecialChar(value: string): boolean
  * // => {name: 'foo'}
  */
 export declare function filterEmptyPropObj(obj: object): object;
+
+/**
+ * URLJoin
+ *
+ * @param args
+ * @returns {string}
+ * @description
+ * Joins all given URL segments together, then normalizes the resulting URL.
+
+ Use String.prototype.join('/') to combine URL segments, then a series of String.prototype.replace() calls with various regexps to normalize the resulting URL (remove double slashes, add proper slashes for protocol, remove slashes before parameters, combine parameters with '&' and normalize first parameter delimiter).
+ * @example
+ *
+ * URLJoin('http://www.google.com', 'a', '/b/cd', '?foo=123', '?bar=foo');
+ * // => 'http://www.google.com/a/b/cd?foo=123&bar=foo'
+ */
+export declare function URLJoin (args: string): string;
