@@ -129,3 +129,4 @@ export {default as isEmoji} from './core/isEmoji';
 export {default as isSpecialChar} from './core/isSpecialChar';
 export {default as filterEmptyPropObj} from './core/filterEmptyPropObj';
 export {default as URLJoin} from './core/URLJoin';
+export {default as autoLink} from './core/autoLink';
