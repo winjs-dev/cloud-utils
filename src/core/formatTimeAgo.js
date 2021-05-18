@@ -14,10 +14,11 @@ function formatTimeAgo(ms) {
   var timeNow = Date.now();
   var diff = (timeNow - ms) / 1000;
   var date = new Date();
-  var days = Math.round(diff / (24 * 60 * 60));
-  var hours = Math.round(diff / (60 * 60));
-  var minutes = Math.round(diff / 60);
-  var second = Math.round(diff);
+  // 向下取整更精确些
+  var days = Math.floor(diff / (24 * 60 * 60));
+  var hours = Math.floor(diff / (60 * 60));
+  var minutes = Math.floor(diff / 60);
+  var second = Math.floor(diff);
 
   if (days > 0 && days < 2) {
     return days + '天前';
