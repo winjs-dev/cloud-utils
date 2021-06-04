@@ -26,7 +26,10 @@ function dynamicLoadScript(src, callback) {
     onEnd(script, cb);
   }
 
-  if (existingScript && cb) cb(null, existingScript);
+  if (existingScript && cb) {
+    const onEnd = 'onload' in existingScript ? stdOnEnd : ieOnEnd;
+    onEnd(existingScript, cb);
+  }
 
   function stdOnEnd(script, cb) {
     script.onload = function () {
