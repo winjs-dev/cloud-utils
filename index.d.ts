@@ -1892,3 +1892,22 @@ export declare function filterEmptyPropObj(obj: object): object;
  * // => 'http://www.google.com/a/b/cd?foo=123&bar=foo'
  */
 export declare function URLJoin (args: string): string;
+
+/**
+ * 将字节转换成友好格式，如Bytes，KB，MB
+ *
+ * @param num
+ * @param precision 3位数字的默认精度
+ * @param addSpace 默认情况下在数字和单位之间添加空格
+ * @returns {string}
+ * @link https://www.30secondsofcode.org/js/s/pretty-bytes
+ * @example
+ *
+ * prettyBytes(10000)
+ * // => '1 KB'
+ * // prettyBytes(-27145424323.5821, 5);
+ * // => '-27.145 GB'
+ * // prettyBytes(123456789, 3, false);
+ * // => '123MB'
+ */
+export declare function prettyBytes (num: number, precision: number, addSpace: boolean): string;

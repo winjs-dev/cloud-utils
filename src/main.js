@@ -1,5 +1,3 @@
-import URLJoin from './core/urlJoin';
-
 export {default as accAdd} from './core/accAdd';
 export {default as accDiv} from './core/accDiv';
 export {default as accMul} from './core/accMul';
@@ -129,3 +127,4 @@ export {default as isEmoji} from './core/isEmoji';
 export {default as isSpecialChar} from './core/isSpecialChar';
 export {default as filterEmptyPropObj} from './core/filterEmptyPropObj';
 export {default as URLJoin} from './core/URLJoin';
+export {default as prettyBytes} from './core/prettyBytes';
