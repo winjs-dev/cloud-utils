@@ -1295,7 +1295,7 @@ export declare function size(val: any): number;
 export declare function timeTaken(callback: () => void): any;
 
 /**
- * 中划线转换小驼峰
+ * 下划线转换小驼峰
  *
  * @since 1.1.7
  * @param {string} variable
@@ -1911,3 +1911,25 @@ export declare function URLJoin (args: string): string;
  * // => '123MB'
  */
 export declare function prettyBytes (num: number, precision: number, addSpace: boolean): string;
+
+/**
+ * 驼峰转换下划线
+ *
+ * @param {string} variable
+ * @returns {string}
+ * @example
+ *
+ * toUnderlineVar('getAccountList');
+ * // => get_account_list
+ */
+export declare function toUnderlineVar (variable: string): string;
+
+/**
+ * 数据对象key驼峰下划线格式相互转化
+ *
+ * @param records 原始对象，支持-数组、key-value对象、字符串
+ * @param type hump-转驼峰 line-转下划线
+ * @param keepOldField true-保留原key,并转换 false-直接转下划线
+ * @returns {*}
+ */
+export declare function transferHumpUnderline (records: Object | Array<any>, type: string, keepOldField: boolean): Object | Array<any>

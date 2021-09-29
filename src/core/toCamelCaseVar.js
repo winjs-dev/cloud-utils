@@ -1,7 +1,6 @@
 /**
- * 中划线转换小驼峰
+ * 下划线转换小驼峰
  *
- * @since 1.1.7
  * @param {string} variable
  * @returns {string}
  * @example
