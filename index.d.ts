@@ -1109,7 +1109,7 @@ export declare function merge(objs: any): any;
  * 离线包情况下，H5应用是运行在 light 的容器里。因此就可以利用 light 本身提供的SDK，即使 tzyj 自身封装扩展的方法，如获取自选股等，是基于 light 的容器，也需要改造
  *
  */
-export declare function nativeJSBridge({method: string, params: object, cb: any}): any;
+export declare function nativeJSBridge({ method: string, params: object, cb: any }): any;
 
 /**
  * 当 H5 页面完全展示之前需要和 native 先进行交互，此用来控制时序。只有 App 调用了 ready(deviceready,hsAppReady) 方法后，表示 App 端已经准备完毕，已注入了相关 js 对象。防止 App 还没注入 js 对象方法，H5 过早调用 App 提供的方法
@@ -1891,7 +1891,7 @@ export declare function filterEmptyPropObj(obj: object): object;
  * URLJoin('http://www.google.com', 'a', '/b/cd', '?foo=123', '?bar=foo');
  * // => 'http://www.google.com/a/b/cd?foo=123&bar=foo'
  */
-export declare function URLJoin (args: string): string;
+export declare function URLJoin(args: string): string;
 
 /**
  * 将字节转换成友好格式，如Bytes，KB，MB
@@ -1910,7 +1910,7 @@ export declare function URLJoin (args: string): string;
  * // prettyBytes(123456789, 3, false);
  * // => '123MB'
  */
-export declare function prettyBytes (num: number, precision: number, addSpace: boolean): string;
+export declare function prettyBytes(num: number, precision: number, addSpace: boolean): string;
 
 /**
  * 驼峰转换下划线
@@ -1922,7 +1922,7 @@ export declare function prettyBytes (num: number, precision: number, addSpace: b
  * toUnderlineVar('getAccountList');
  * // => get_account_list
  */
-export declare function toUnderlineVar (variable: string): string;
+export declare function toUnderlineVar(variable: string): string;
 
 /**
  * 数据对象key驼峰下划线格式相互转化
@@ -1932,4 +1932,13 @@ export declare function toUnderlineVar (variable: string): string;
  * @param keepOldField true-保留原key,并转换 false-直接转下划线
  * @returns {*}
  */
-export declare function transferHumpUnderline (records: Object | Array<any>, type: string, keepOldField: boolean): Object | Array<any>
+export declare function transferHumpUnderline(records: Object | Array<any>, type: string, keepOldField: boolean): Object | Array<any>;
+
+
+/**
+ * 转数字
+ *
+ * @param val
+ * @returns {*|number}
+ */
+export declare function toNumber(val: any): any;
