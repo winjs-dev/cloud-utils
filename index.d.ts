@@ -1798,6 +1798,17 @@ export declare function setDocumentTitle(title: string, img?: string): boolean
 export declare function inQQBrowser(): boolean
 
 /**
+ * 是否是QQ客户端webview内核
+ *
+ * @returns {boolean}
+ * @example
+ *
+ * inQQ();
+ * // => false
+ */
+export declare function inQQ(): boolean
+
+/**
  * 是否是UC浏览器内核
  *
  * @returns {boolean}
