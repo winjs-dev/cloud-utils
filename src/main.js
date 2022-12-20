@@ -132,3 +132,4 @@ export {default as prettyBytes} from './core/prettyBytes';
 export {default as toUnderlineVar} from './core/toUnderlineVar';
 export {default as transferHumpUnderline} from './core/transferHumpUnderline';
 export {default as toNumber} from './core/toNumber';
+export * from './core/is';
