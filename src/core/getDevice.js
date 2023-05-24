@@ -22,7 +22,9 @@ function getDevice () {
   var ipod = deviceInfo.model === 'iPod';
   var iphone = deviceInfo.model === 'iPhone';
 
-  device.ios = device.android = device.iphone = device.ipad = device.androidChrome = false;
+  device.android = android;
+  device.iphone = iphone;
+  device.ipad = ipad;
 
   device.result = result;
   device.osVersion = os.version;
@@ -30,7 +32,6 @@ function getDevice () {
   // Android
   if (android) {
     device.os = 'android';
-    device.android = true;
     device.androidChrome = browser.name === 'Chrome';
   }
   if (ipad || iphone || ipod) {
