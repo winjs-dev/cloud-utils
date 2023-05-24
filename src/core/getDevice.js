@@ -1,3 +1,5 @@
+import 'ua-parser-js/dist/ua-parser.min';
+
 /**
  * 获取移动设备信息，如是否是iOS，android等
  *
@@ -7,45 +9,33 @@
  * getDevice();
  * // => {"androidChrome":false,"ipad":false,"iphone":true,"android":false,"ios":true,"os":"ios","osVersion":"9.1","webView":null}
  */
-function getDevice() {
+function getDevice () {
+  var uap = new window.UAParser();
+  var result = uap.getResult();
+  var ua = result.ua;
+  var os = result.os;
+  var browser = result.browser;
+  var deviceInfo = result.device;
   var device = {};
-  var ua = navigator.userAgent;
-  var android = ua.match(/(Android);?[\s\/]+([\d.]+)?/);
-  var ipad = ua.match(/(iPad).*OS\s([\d_]+)/);
-  var ipod = ua.match(/(iPod)(.*OS\s([\d_]+))?/);
-  var iphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/);
+  var android = os.name === 'Android';
+  var ipad = deviceInfo.model === 'iPad';
+  var ipod = deviceInfo.model === 'iPod';
+  var iphone = deviceInfo.model === 'iPhone';
 
   device.ios = device.android = device.iphone = device.ipad = device.androidChrome = false;
+
+  device.result = result;
+  device.osVersion = os.version;
 
   // Android
   if (android) {
     device.os = 'android';
-    device.osVersion = android[2];
     device.android = true;
-    device.androidChrome = ua.toLowerCase().indexOf('chrome') >= 0;
+    device.androidChrome = browser.name === 'Chrome';
   }
   if (ipad || iphone || ipod) {
     device.os = 'ios';
     device.ios = true;
-  }
-  // iOS
-  if (iphone && !ipod) {
-    device.osVersion = iphone[2].replace(/_/g, '.');
-    device.iphone = true;
-  }
-  if (ipad) {
-    device.osVersion = ipad[2].replace(/_/g, '.');
-    device.ipad = true;
-  }
-  if (ipod) {
-    device.osVersion = ipod[3] ? ipod[3].replace(/_/g, '.') : null;
-    device.iphone = true;
-  }
-  // iOS 8+ changed UA
-  if (device.ios && device.osVersion && ua.indexOf('Version/') >= 0) {
-    if (device.osVersion.split('.')[0] === '10') {
-      device.osVersion = ua.toLowerCase().split('version/')[1].split(' ')[0];
-    }
   }
 
   // Webview
