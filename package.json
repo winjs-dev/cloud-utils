@@ -1,7 +1,7 @@
 {
   "name": "@winner-fed/cloud-utils",
   "description": "A collection of utils by winner fed",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "author": {
     "name": "cloudbroker",
     "email": "cloudbroker@163.com"
