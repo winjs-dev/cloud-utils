@@ -1,4 +1,4 @@
-import 'ua-parser-js/dist/ua-parser.min';
+import '../.internal/ua-parser';
 
 /**
  * 获取移动设备信息，如是否是iOS，android等

@@ -74,8 +74,7 @@
     "uglify-js": "^3.0.15"
   },
   "dependencies": {
-    "@babel/runtime": "^7.1.2",
-    "ua-parser-js": "1.0.35"
+    "@babel/runtime": "^7.1.2"
   },
   "license": "MIT",
   "engines": {
