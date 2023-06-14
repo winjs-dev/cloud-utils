@@ -24,10 +24,13 @@
  * // => 2006-7-2 8:9:4.18
  */
 function formatDate(date = new Date(), fmt = 'yyyy-MM-dd HH:mm:ss') {
-  if (typeof date === 'string') {
+  if (typeof date === 'string' && date.length) {
     date = new Date(formatTimeByPattern(date));
-  } else if (typeof date === 'number') {
+  } else if (typeof date === 'number' && !isNaN(date)) {
     date = new Date(date);
+  } else {
+    // 空字符串，NaN
+    date = new Date();
   }
   var o = {
     'M+': date.getMonth() + 1, // 月份
