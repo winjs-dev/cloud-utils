@@ -31,13 +31,13 @@ $ npm install --save @winner-fed/cloud-utils
 如果你是 node 环境
 
 ```js
-var { formatDate } = require('@winner-fed/cloud-utils.common');
+var { formatDate } = require('@winner-fed/dist/cloud-utils.common');
 ```
 
 如果你是 webpack 等环境
 
 ```js
-import { formatDate } from '@winner-fed/cloud-utils.esm';
+import { formatDate } from '@winner-fed/dist/cloud-utils.esm';
 ```
 
 如果你是 requirejs 环境
