@@ -13,7 +13,7 @@ function combineURLs(baseURL, ...relativeURLs) {
     if (relativeURLs[length - 1].slice(-1) === '/') {
       relativeUrlStr += '/';
     }
-    return baseURL.replace(/\/+$/, '') + '/' + relativeUrlStr;
+    return baseURL.replace(/\/+$/, '') + '/' + relativeUrlStr.replace(/^\/+/, '');
   } else {
     return baseURL;
   }
