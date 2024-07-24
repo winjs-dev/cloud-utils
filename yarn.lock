@@ -840,6 +840,13 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
+"@jsdoc/salty@^0.2.1":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@jsdoc/salty/-/salty-0.2.2.tgz#567017ddda2048c5ff921aeffd38564a0578fdca"
+  integrity sha512-A1FrVnc7L9qI2gUGsfN0trTiJNK72Y0CL/VAyrmYEmeKI3pnHDawP64CEev31XLyAAOx2xmDo3tbadPxC0CSbw==
+  dependencies:
+    lodash "^4.17.21"
+
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.1"
   resolved "https://registry.npmjs.org/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.1.tgz#a21117b19ee9be70c379ec1877537ef2e1c63301"
@@ -1573,10 +1580,12 @@ diff@3.5.0:
   resolved "https://registry.npmjs.org/diff/-/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"
   integrity sha512-A46qtFgd+g7pDZinpnwiRJtxbC1hpgf0uzP3iG89scHk0AUC7A1TGxf5OiiOUv/JMZR8GOt8hL900hV0bOy5xA==
 
-docdash@^0.4.0:
-  version "0.4.0"
-  resolved "https://registry.npmjs.org/docdash/-/docdash-0.4.0.tgz#05c3a50d83189981699ee0c076d3a3950db7ec00"
-  integrity sha1-BcOlDYMYmYFpnuDAdtOjlQ237AA=
+docdash@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/docdash/-/docdash-2.0.0.tgz#1db24c934f9d4feb5576c638e8c061deb5ae1832"
+  integrity sha512-AxxZwrMLmiArEHJirdyZmW6YTBKxkd/Z5V9U2EU1crIMtpgoU/cH7Hnc9n1E0lzB1ZSam+VVMSnvlc+9+GUGVg==
+  dependencies:
+    "@jsdoc/salty" "^0.2.1"
 
 doctrine@^2.1.0:
   version "2.1.0"
@@ -2755,7 +2764,7 @@ locate-path@^3.0.0:
     p-locate "^3.0.0"
     path-exists "^3.0.0"
 
-lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.19, lodash@^4.17.4, lodash@^4.3.0:
+lodash@^4.17.11, lodash@^4.17.14, lodash@^4.17.19, lodash@^4.17.21, lodash@^4.17.4, lodash@^4.3.0:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
