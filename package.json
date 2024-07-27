@@ -54,7 +54,7 @@
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "buble": "^0.16.0",
-    "chai": "^4.2.0",
+    "chai": "^5.0.0",
     "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
     "docdash": "^0.4.0",
