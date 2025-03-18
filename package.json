@@ -61,7 +61,7 @@
     "es5-shim": "^4.5.12",
     "eslint": "^4.18.2",
     "gh-pages": "^6.3.0",
-    "husky": "^1.1.4",
+    "husky": "^9.0.0",
     "istanbul": "^0.4.5",
     "jsdoc": "^3.5.4",
     "lint-staged": "^8.0.4",
