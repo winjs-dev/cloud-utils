@@ -57,7 +57,7 @@
     "chai": "^4.2.0",
     "coveralls": "^3.0.2",
     "cross-env": "^5.2.0",
-    "docdash": "^0.4.0",
+    "docdash": "^2.0.0",
     "es5-shim": "^4.5.12",
     "eslint": "^4.18.2",
     "husky": "^1.1.4",
