@@ -1,7 +1,7 @@
 import '../.internal/ua-parser';
 
 /**
- * 获取移动设备信息，如是否是iOS，android等
+ * 获取移动设备信息，如是否是iOS，android、hms、isLightOS等
  *
  * @returns {{}}
  * @example
