@@ -21,10 +21,14 @@ function getDevice () {
   var ipad = deviceInfo.model === 'iPad';
   var ipod = deviceInfo.model === 'iPod';
   var iphone = deviceInfo.model === 'iPhone';
+  var hms = ua.toLowerCase().indexOf('arkweb') !== -1;
+  var isLightOS = ua.toLowerCase().indexOf('lightos') !== -1;
 
   device.android = android;
   device.iphone = iphone;
   device.ipad = ipad;
+  device.hms = hms;
+  device.isLightOS = isLightOS;
 
   device.result = result;
   device.osVersion = os.version;
@@ -37,6 +41,11 @@ function getDevice () {
   if (ipad || iphone || ipod) {
     device.os = 'ios';
     device.ios = true;
+  }
+
+  // HarmonyOS
+  if (hms) {
+    device.os = 'HarmonyOS';
   }
 
   // Webview
