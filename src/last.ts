@@ -7,6 +7,6 @@
  * last(['1','2','3']);
  * // => '3'
  */
-export default function last<T>(array: T[]): T | undefined {
+export function last<T>(array: T[]): T | undefined {
   return Array.isArray(array) && array.slice(-1)[0];
 }

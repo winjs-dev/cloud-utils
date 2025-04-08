@@ -14,20 +14,18 @@
  * const clonedArr = deepClone(arr);
  * // => arr !== clonedArr, arr[2] !== clonedArr[2]
  */
-function deepClone<T>(obj: T): T {
+export function deepClone<T>(obj: T): T {
   if (typeof obj !== 'object' || obj === null) {
     return obj;
   }
 
   let clone: any = Array.isArray(obj) ? [] : {};
-  
+
   for (const key in obj) {
     if (Object.prototype.hasOwnProperty.call(obj, key)) {
       clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key];
     }
   }
-  
+
   return clone as T;
 }
-
-export default deepClone;
