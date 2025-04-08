@@ -1,5 +1,5 @@
 {
-  "name": "cloud-utils-rslib",
+  "name": "@winner-fed/cloud-utils",
   "version": "1.0.0",
   "type": "module",
   "exports": {
