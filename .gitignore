@@ -1,16 +1,14 @@
-lib
-coverage
-dist/*.gz
-dist/*.map
-node_modules
+# Local
 .DS_Store
-*~
-.idea
-.vscode
-.project
-.happypack
-npm-debug.log
-yarn.lock
+*.local
+*.log*
+
+# Dist
+node_modules
 dist/
-.history
-docs/
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+.idea
+api/

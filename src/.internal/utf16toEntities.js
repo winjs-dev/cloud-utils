@@ -1,17 +1,22 @@
 /**
  * utf16字符串转实体字符
- * @param {string} str 待编译的字符串
+ * @param {string} str - 待编译的字符串
+ * @returns {string} 转换后的实体字符
+ * @throws {TypeError} 当输入参数不是字符串时抛出
+ * @example
+ *
+ * utf16toEntities('𠄩');
+ * // => '&#12345;'
  */
-function utf16toEntities(str) {
+function utf16toEntities(str: string): string {
   if (!str) return '';
   if (typeof str !== 'string') {
-    console.error('需要编译的数据类型需要是字符串类型');
-    return str;
+    throw new TypeError('需要编译的数据类型需要是字符串类型');
   }
-  var patt = /[\ud800-\udbff][\udc00-\udfff]/g;
+  const patt = /[\ud800-\udbff][\udc00-\udfff]/g;
   // 检测utf16字符正则
   str = str.replace(patt, function (char) {
-    var H, L, code;
+    let H: number, L: number, code: number;
     if (char.length === 2) {
       H = char.charCodeAt(0);
       // 取出高位
