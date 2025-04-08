@@ -17,10 +17,8 @@
  * isValidAShareCode('sh600600');
  * // => true
  */
-function isValidAShareCode(val: string): boolean {
+export function isValidAShareCode(val: string): boolean {
   const reg = /^(s[hz]|S[HZ])(000[\d]{3}|002[\d]{3}|300[\d]{3}|600[\d]{3}|60[\d]{4})$/;
 
   return reg.test(val);
 }
-
-export default isValidAShareCode;

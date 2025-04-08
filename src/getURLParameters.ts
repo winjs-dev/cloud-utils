@@ -17,5 +17,3 @@ export function getURLParameters(url: string = window.location.href): Record<str
   if (!paramsArr) return {};
   return paramsArr.reduce((a, v) => ((a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1)), a), {} as Record<string, string>);
 }
-
-export default getURLParameters;

@@ -5,7 +5,7 @@
  * isPhoneX()
  * // => true
  */
-function isPhoneX(): boolean {
+export function isPhoneX(): boolean {
   // X XS, XS Max, XR
   const xSeriesConfig = [
     {
@@ -24,7 +24,7 @@ function isPhoneX(): boolean {
       height: 896
     }
   ];
-  
+
   if (typeof window !== 'undefined' && window) {
     const isIOS = /iphone/gi.test(window.navigator.userAgent);
     if (!isIOS) return false;
@@ -39,5 +39,3 @@ function isPhoneX(): boolean {
   }
   return false;
 }
-
-export default isPhoneX;

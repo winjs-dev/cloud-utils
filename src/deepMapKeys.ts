@@ -34,22 +34,20 @@
  *   }
  * }
  */
-function deepMapKeys<T extends Record<string, any>>(obj: T, fn: (key: string) => string): T {
+export function deepMapKeys<T extends Record<string, any>>(obj: T, fn: (key: string) => string): T {
   if (Array.isArray(obj)) {
     return obj.map((val) => deepMapKeys(val, fn)) as unknown as T;
   }
-  
+
   if (typeof obj === 'object' && obj !== null) {
     return Object.keys(obj).reduce((acc, current) => {
       const val = obj[current];
       const newKey = fn(current);
-      acc[newKey] = 
+      acc[newKey] =
         val !== null && typeof val === 'object' ? deepMapKeys(val, fn) : val;
       return acc;
     }, {} as Record<string, any>) as T;
   }
-  
+
   return obj;
 }
-
-export default deepMapKeys;

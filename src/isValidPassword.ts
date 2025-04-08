@@ -7,10 +7,8 @@
  * isValidPassword('Kd@curry666');
  * // => true
  */
-function isValidPassword(val: string, minLength: number = 6): boolean {
+export function isValidPassword(val: string, minLength: number = 6): boolean {
   const reg = new RegExp(`^.*(?=.{${minLength},})(?=.*\\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*? ]).*$`);
 
   return reg.test(val);
 }
-
-export default isValidPassword;

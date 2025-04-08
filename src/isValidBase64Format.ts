@@ -8,10 +8,8 @@
  * isValidBase64Format('data:image/gif;base64,xxxx==')
  * => true
  */
-function isValidBase64Format(val: string): boolean {
+export function isValidBase64Format(val: string): boolean {
   const reg = /^\s*data:(?:[a-z]+\/[a-z0-9-+.]+(?:;[a-z-]+=[a-z0-9-]+)?)?(?:;base64)?,([a-z0-9!$&',()*+;=\-._~:@/?%\s]*?)\s*$/i;
 
   return reg.test(val);
 }
-
-export default isValidBase64Format;

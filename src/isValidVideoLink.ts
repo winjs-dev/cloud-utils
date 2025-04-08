@@ -6,7 +6,7 @@
  * isValidVideoLink('http://www.abc.com/video/wc.avi');
  * // => true
  */
-export default function isValidVideoLink(val: string): boolean {
+export function isValidVideoLink(val: string): boolean {
   const reg = /^https?:\/\/.*?(?:swf|avi|flv|mpg|rm|mov|wav|asf|3gp|mkv|rmvb|mp4)$/i;
   return reg.test(val);
 }

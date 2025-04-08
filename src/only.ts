@@ -1,6 +1,6 @@
 /**
  * 返回对象的白名单属性
- * 
+ *
  * {@link https://github.com/tj/node-only}
  * @template T - 对象类型
  * @template K - 键类型
@@ -14,7 +14,7 @@
  *   email: 'tobi@learnboost.com',
  *   _id: '12345'
  * };
- * 
+ *
  * const user = only(obj, 'name last email');
  * // => {
  * //      name: 'tobi',
@@ -26,7 +26,7 @@
  * const result = only(obj, ['a', 'b']);
  * // => { a: 1, b: 2 }
  */
-function only<T extends object, K extends keyof T>(obj: T, keys: string | K[]): Pick<T, K> {
+export function only<T extends object, K extends keyof T>(obj: T, keys: string | K[]): Pick<T, K> {
   obj = obj || {};
   if (typeof keys === 'string') keys = keys.split(/ +/) as K[];
   return (keys as K[]).reduce((ret, key) => {

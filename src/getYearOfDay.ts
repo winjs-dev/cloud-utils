@@ -28,7 +28,7 @@ export function getYearOfDay(time: string | Date): number {
  * 获取某年的第一天
  * @private
  */
-function getFirstDayOfYear(time: string | Date): string {
+export function getFirstDayOfYear(time: string | Date): string {
   const year = new Date(time).getFullYear();
   return `${year}-01-01 00:00:00`;
 }
@@ -37,9 +37,9 @@ function getFirstDayOfYear(time: string | Date): string {
  * 获取某年最后一天
  * @private
  */
-function getLastDayOfYear(time: string | Date): string {
+export function getLastDayOfYear(time: string | Date): string {
   const year = new Date(time).getFullYear();
   const dateString = `${year}-12-01 00:00:00`;
-  const endDay = getMonthOfDay(new Date(dateString).getFullYear(), 12);
+  const endDay = getMonthOfDay(new Date(dateString).getFullYear()+'');
   return `${year}-12-${endDay} 23:59:59`;
 }

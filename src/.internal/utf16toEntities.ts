@@ -10,9 +10,7 @@
  */
 function utf16toEntities(str: string): string {
   if (!str) return '';
-  if (typeof str !== 'string') {
-    throw new TypeError('需要编译的数据类型需要是字符串类型');
-  }
+
   const patt = /[\ud800-\udbff][\udc00-\udfff]/g;
   // 检测utf16字符正则
   str = str.replace(patt, function (char) {

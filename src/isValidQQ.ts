@@ -6,7 +6,7 @@
  * isValidQQ('814563410');
  * // => true
  */
-export default function isValidQQ(val: string): boolean {
+export function isValidQQ(val: string): boolean {
   const reg = /^[1-9][0-9]{4,10}$/;
 
   return reg.test(val);

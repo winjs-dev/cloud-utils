@@ -9,11 +9,9 @@
  * isSpecialChar('abc@');
  * // => true
  */
-function isSpecialChar(value: string): boolean {
+export function isSpecialChar(value: string): boolean {
   const regEn = /[`~!@#$%^&*()_+<>?:"{},.\/;'[\]\s]/im;
   const regCn = /[·！#￥（——）：；“”‘、，|《。》？、【】[\]\s]/im;
 
   return regEn.test(value) || regCn.test(value);
 }
-
-export default isSpecialChar;

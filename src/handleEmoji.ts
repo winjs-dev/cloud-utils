@@ -1,5 +1,5 @@
-import utf16toEntities from '../.internal/utf16toEntities';
-import entitiestoUtf16 from '../.internal/entitiestoUtf16';
+import utf16toEntities from './.internal/utf16toEntities';
+import entitiestoUtf16 from './.internal/entitiestoUtf16';
 
 /**
  * 处理emoji，用于把用utf16编码的字符转换成实体字符
@@ -15,10 +15,6 @@ import entitiestoUtf16 from '../.internal/entitiestoUtf16';
  */
 export function handleEmoji(str: string = '', type: 'encode' | 'decode' = 'encode'): string {
   if (!str) return '';
-  if (typeof str !== 'string') {
-    console.error('handleEmoji数据类型需要是字符串类型');
-    return str;
-  }
 
   if (type === 'encode') {
     return utf16toEntities(str);

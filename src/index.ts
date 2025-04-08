@@ -99,7 +99,7 @@ export { size } from './size';
 export { timeTaken } from './timeTaken';
 export { dig } from './dig';
 export { dynamicLoadScript } from './dynamicLoadScript';
-export { default as encrypt } from './encrypt';
+export { encrypt } from './encrypt';
 export { trim } from './trim';
 export { getIn } from './getIn';
 export { getDayOfYearWeek } from './getDayOfYearWeek';

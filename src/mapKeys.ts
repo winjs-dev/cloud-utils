@@ -9,7 +9,7 @@
  * mapKeys({ a: 1, b: 2 }, (val, key) => key + val);
  * // => { a1: 1, b2: 2 }
  */
-const mapKeys = <T extends Record<string, any>, K extends string>(
+export const mapKeys = <T extends Record<string, any>, K extends string>(
   obj: T,
   fn: (value: any, key: string, obj: T) => K
 ): Record<K, any> =>
@@ -17,5 +17,3 @@ const mapKeys = <T extends Record<string, any>, K extends string>(
     acc[fn(obj[k], k, obj)] = obj[k];
     return acc;
   }, {} as Record<K, any>);
-
-export default mapKeys;

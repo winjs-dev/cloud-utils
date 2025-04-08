@@ -13,7 +13,7 @@
  * mapValues(users, u => u.age);
  * // => { fred: 40, pebbles: 1 }
  */
-const mapValues = <T, R>(
+export const mapValues = <T, R>(
   obj: Record<string, T>,
   fn: (value: T, key: string, obj: Record<string, T>) => R
 ): Record<string, R> =>
@@ -21,5 +21,3 @@ const mapValues = <T, R>(
     acc[k] = fn(obj[k], k, obj);
     return acc;
   }, {} as Record<string, R>);
-
-export default mapValues;

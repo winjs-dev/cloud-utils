@@ -11,10 +11,8 @@
  * isTelephone('0341-86091234');
  * // => true
  */
-function isValidChineseTelephone(val: string): boolean {
+export function isValidChineseTelephone(val: string): boolean {
   const reg = /\d{3}-\d{8}|\d{4}-\d{7}/;
 
   return reg.test(val);
 }
-
-export default isValidChineseTelephone;

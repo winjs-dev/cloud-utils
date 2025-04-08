@@ -11,10 +11,8 @@
  * isValidBankNo('6222026006705354217');
  * // => true
  */
-function isValidBankNo(val: string): boolean {
+export function isValidBankNo(val: string): boolean {
   const reg = /^[1-9]\d{9,29}$/;
 
   return reg.test(val);
 }
-
-export default isValidBankNo;

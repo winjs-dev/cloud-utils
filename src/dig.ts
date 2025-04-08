@@ -27,5 +27,3 @@ export function dig(obj: Record<string, any>, target: string): any {
       if (typeof val === 'object') return dig(val, target);
     }, undefined);
 }
-
-export default dig;

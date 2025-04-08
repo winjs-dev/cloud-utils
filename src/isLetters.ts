@@ -5,7 +5,7 @@
  * @param val - 要检查的字符串
  * @returns {boolean} 是否只包含字母
  * @example
- * 
+ *
  * isLetters('abc'); // => true
  * isLetters('ABC'); // => true
  * isLetters('aBc'); // => true
@@ -14,9 +14,7 @@
  * isLetters('abc def'); // => false
  * isLetters(''); // => false
  */
-function isLetters(val: string): boolean {
+export function isLetters(val: string): boolean {
   const reg = /^[a-z]+$/i;
   return reg.test(val);
 }
-
-export default isLetters; 

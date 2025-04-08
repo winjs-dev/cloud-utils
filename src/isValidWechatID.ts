@@ -7,7 +7,7 @@
  * isValidWechatID('liwenbo_2010');
  * // => true
  */
-export default function isValidWechatID(val: string): boolean {
+export function isValidWechatID(val: string): boolean {
   const reg = /^[a-zA-Z][-_a-zA-Z0-9]{5,19}$/;
   return reg.test(val);
 }

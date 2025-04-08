@@ -9,7 +9,7 @@
  * isValidTestScores('160'); // => false
  * isValidTestScores('145.3'); // => false
  */
-export default function isValidTestScores(val: string): boolean {
+export function isValidTestScores(val: string): boolean {
   const reg = /^150$|^(?:\d|[1-9]\d|1[0-4]\d)(?:.5)?$/;
   return reg.test(val);
 }

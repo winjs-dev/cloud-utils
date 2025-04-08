@@ -18,11 +18,9 @@
  * size({ one: 1, two: 2, three: 3 });
  * // => 3
  */
-const size = (val: any[] | object | string): number =>
+export const size = (val: any[] | object | string): number =>
   Array.isArray(val)
     ? val.length
     : val && typeof val === 'object'
     ? (val as any).size || (val as any).length || Object.keys(val).length
     : typeof val === 'string' ? new Blob([val]).size : 0;
-
-export default size;

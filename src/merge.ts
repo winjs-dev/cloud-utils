@@ -17,7 +17,7 @@
  * );
  * // => { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], c: 'foo' }
  */
-function merge<T>(...objs: Record<string, T>[]): Record<string, T[]> {
+export function merge<T>(...objs: Record<string, T>[]): Record<string, T[]> {
   return [...objs].reduce(
     (acc, obj) =>
       Object.keys(obj).reduce((a, k) => {
@@ -27,5 +27,3 @@ function merge<T>(...objs: Record<string, T>[]): Record<string, T[]> {
     {} as Record<string, T[]>
   );
 }
-
-export default merge;

@@ -8,7 +8,7 @@ import { isArray, isObject, isString } from './is';
  * @param val - 要检查的值
  * @returns {boolean} 是否为空
  * @example
- * 
+ *
  * isEmpty([]); // => true
  * isEmpty({}); // => true
  * isEmpty(''); // => true
@@ -20,7 +20,7 @@ import { isArray, isObject, isString } from './is';
  * isEmpty(new Map()); // => true
  * isEmpty(new Set()); // => true
  */
-function isEmpty(val: unknown): boolean {
+export function isEmpty(val: unknown): boolean {
   if (isArray(val) || isString(val)) {
     return (val as Array<unknown> | string).length === 0;
   }
@@ -35,5 +35,3 @@ function isEmpty(val: unknown): boolean {
 
   return false;
 }
-
-export default isEmpty; 

@@ -6,7 +6,7 @@
  * isValidTelephone('0571-4211236'); // => true
  * isValidTelephone('12345678'); // => false
  */
-export default function isValidTelephone(val: string): boolean {
+export function isValidTelephone(val: string): boolean {
   const reg = /^0\d{2,3}-\d{7,8}$/;
   return reg.test(val);
 }

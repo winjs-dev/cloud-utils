@@ -9,7 +9,7 @@
  * timeTaken(() => Math.pow(2, 10));
  * // => 1024
  */
-function timeTaken(callback: Function): any {
+export function timeTaken(callback: Function): any {
   if (typeof callback !== 'function') throw new Error('callback 必须为可执行的函数');
   console.time('timeTaken');
   const r = callback();
@@ -17,5 +17,3 @@ function timeTaken(callback: Function): any {
 
   return r;
 }
-
-export default timeTaken;

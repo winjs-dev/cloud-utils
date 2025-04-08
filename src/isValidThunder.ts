@@ -6,7 +6,7 @@
  * isValidThunder('thunder://QUEsICdtYWduZXQ6P3h0PXVybjpidGloOjBCQTE0RTUxRkUwNjU1RjE0Qzc4NjE4RjY4NDY0QjZFNTEyNjcyOUMnWlo='); // => true
  * isValidThunder('http://example.com'); // => false
  */
-export default function isValidThunder(val: string): boolean {
+export function isValidThunder(val: string): boolean {
   const reg = /^thunderx?:\/\/[a-zA-Z\d]+=$/;
   return reg.test(val);
 }

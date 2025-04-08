@@ -51,7 +51,7 @@ export function dynamicLoadScript(
   }
 
   function ieOnEnd(script: HTMLScriptElement, cb: (err: Error | null, script?: HTMLScriptElement) => void) {
-    script.onreadystatechange = function () {
+    (script as any).onreadystatechange = function () {
       if (this.readyState !== 'complete' && this.readyState !== 'loaded') return;
       this.onreadystatechange = null;
       cb(null, script); // there is no way to catch loading errors in IE8
@@ -59,4 +59,3 @@ export function dynamicLoadScript(
   }
 }
 
-export default dynamicLoadScript;

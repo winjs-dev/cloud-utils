@@ -18,10 +18,8 @@
  * isValidPassport('K25345719');
  * // => true
  */
-function isValidPassport(val: string): boolean {
+export function isValidPassport(val: string): boolean {
   const reg = /(^[EeKkGgDdSsPpHh]\d{8}$)|(^(([Ee][a-fA-F])|([DdSsPp][Ee])|([Kk][Jj])|([Mm][Aa])|(1[45]))\d{7}$)/;
 
   return reg.test(val);
 }
-
-export default isValidPassport;

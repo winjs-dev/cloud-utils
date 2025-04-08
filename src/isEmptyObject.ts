@@ -5,16 +5,14 @@
  * @param val - 要检查的值
  * @returns {boolean} 是否为空对象
  * @example
- * 
+ *
  * isEmptyObject({}); // => true
  * isEmptyObject({ a: 1 }); // => false
  * isEmptyObject([]); // => false
  * isEmptyObject(null); // => false
  * isEmptyObject(undefined); // => false
  */
-function isEmptyObject(val: unknown): boolean {
+export function isEmptyObject(val: unknown): boolean {
   if (val !== Object(val)) return false;
   return Object.keys(val as object).length === 0;
 }
-
-export default isEmptyObject; 

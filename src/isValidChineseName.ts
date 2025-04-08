@@ -14,10 +14,8 @@
  * isValidChineseName('德克·维尔纳·诺维茨基');
  * // => true
  */
-function isValidChineseName(val: string): boolean {
+export function isValidChineseName(val: string): boolean {
   const reg = /^(?:[\u4e00-\u9fa5·]{2,16})$/;
 
   return reg.test(val);
 }
-
-export default isValidChineseName;

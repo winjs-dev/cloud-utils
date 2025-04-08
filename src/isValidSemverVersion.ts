@@ -6,10 +6,8 @@
  * isValidSemverVersion('16.3.10');
  * // => true
  */
-function isValidSemverVersion(val: string): boolean {
+export function isValidSemverVersion(val: string): boolean {
   const reg = /^150$|^(?:\d|[1-9]\d|1[0-4]\d)(?:.5)?$/;
 
   return reg.test(val);
 }
-
-export default isValidSemverVersion;

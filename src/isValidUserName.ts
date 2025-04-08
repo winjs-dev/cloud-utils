@@ -10,7 +10,7 @@
  * isValidUserName('ab', 3, 10); // => false (长度不足)
  * isValidUserName('invalid*name'); // => false (包含非法字符)
  */
-export default function isValidUserName(val: string, minLength: number = 4, maxLength: number = 16): boolean {
+export function isValidUserName(val: string, minLength: number = 4, maxLength: number = 16): boolean {
   const reg = new RegExp(`^[a-zA-Z0-9_-]{${minLength},${maxLength}}$`);
   return reg.test(val);
 }

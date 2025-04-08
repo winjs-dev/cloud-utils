@@ -8,7 +8,7 @@
  * isValidURI('ftp://example.com/file.txt'); // => true
  * isValidURI('invalid-url'); // => false
  */
-export default function isValidURI(url: string): boolean {
+export function isValidURI(url: string): boolean {
   const protocols = '((https?|s?ftp|irc[6s]?|git|afp|telnet|smb):\/\/)?';
   const userInfo = '([a-z0-9]\w*(\:[\S]+)?\@)?';
   const domain = '([a-z0-9]([\w]*[a-z0-9])*\.)?[a-z0-9]\w*\.[a-z]{2,}(\.[a-z]{2,})?';

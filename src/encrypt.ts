@@ -24,5 +24,3 @@ export function encrypt(params: Record<string, string>): string {
 
   return str.join('&');
 }
-
-export default encrypt;

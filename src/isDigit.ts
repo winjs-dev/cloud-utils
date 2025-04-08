@@ -5,7 +5,7 @@
  * @param val - 要检查的字符串
  * @returns {boolean} 是否为数字
  * @example
- * 
+ *
  * isDigit('123'); // => true
  * isDigit('-123'); // => true
  * isDigit('123.45'); // => true
@@ -14,9 +14,7 @@
  * isDigit('12.34.56'); // => false
  * isDigit(''); // => false
  */
-function isDigit(val: string): boolean {
+export function isDigit(val: string): boolean {
   const reg = /^-?\d+\.?\d*$/;
   return reg.test(val);
 }
-
-export default isDigit; 

@@ -9,10 +9,8 @@
  * isUnifiedSocialCreditCode('92371000MA3MXH0E3W');
  * // => true
  */
-function isUnifiedSocialCreditCode(val: string): boolean {
+export function isUnifiedSocialCreditCode(val: string): boolean {
   const reg = /[0-9A-HJ-NPQRTUWXY]{2}\d{6}[0-9A-HJ-NPQRTUWXY]{10}/;
 
   return reg.test(val);
 }
-
-export default isUnifiedSocialCreditCode;
