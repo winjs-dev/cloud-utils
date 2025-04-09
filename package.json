@@ -1,6 +1,7 @@
 {
   "name": "@winner-fed/cloud-utils",
-  "version": "1.0.0",
+  "description": "A collection of utils by winner fed",
+  "version": "2.0.0",
   "type": "module",
   "exports": {
     ".": {
@@ -15,19 +16,35 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "rslib",
+    "cloud-utils",
+    "utils",
+    "lib"
+  ],
   "scripts": {
     "build": "rslib build",
     "dev": "rslib build --watch",
     "format": "prettier --write .",
     "docs:dev": "rspress dev",
-    "docs:build": "rspress build"
+    "docs:build": "rspress build",
+    "docs:deploy": "gh-pages -d doc_build"
   },
   "devDependencies": {
     "@rslib/core": "^0.6.1",
     "@rspress/plugin-typedoc": "^1.43.9",
+    "gh-pages": "^6.3.0",
     "prettier": "^3.5.2",
     "rspress": "^1.43.9",
+    "rspress-plugin-sitemap": "^1.1.1",
     "typescript": "5.0.4"
   },
-  "private": true
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/winjs-dev/cloud-utils.git"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  }
 }

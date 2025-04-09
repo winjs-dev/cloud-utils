@@ -2,6 +2,7 @@ import { defineConfig } from 'rspress/config';
 import { pluginTypeDoc } from '@rspress/plugin-typedoc';
 import path from 'path';
 import fs from 'fs';
+import pluginSitemap from 'rspress-plugin-sitemap';
 
 // 获取src目录下所有.ts文件
 function getTypeScriptFiles(dir: string) {
@@ -59,12 +60,15 @@ function getSidebarItems(dir: string) {
   // 按文件名排序
   return sidebarGroups.sort((a, b) => a.text.localeCompare(b.text));
 }
+
+const siteUrl = 'https://winjs-dev.github.io/cloud-utils/';
+
 export default defineConfig({
   title: '@winner-fed/cloud-utils',
   description: '@winner-fed/cloud-utils API文档',
   themeConfig: {
+    searchPlaceholderText: '搜索文档',
     nav: [
-      { text: '首页', link: '/' },
       { text: 'API', link: '/api' },
     ],
     sidebar: {
@@ -74,11 +78,14 @@ export default defineConfig({
           items: getSidebarItems(path.join(__dirname, 'src')),
         },
       ],
-    },
+    }
   },
   plugins: [
     pluginTypeDoc({
       entryPoints: [path.join(__dirname, 'src/index.ts')],
+    }),
+    pluginSitemap({
+      domain: siteUrl,
     }),
   ],
 });
