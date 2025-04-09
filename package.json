@@ -23,8 +23,8 @@
     "lib"
   ],
   "scripts": {
-    "build": "rslib build",
-    "dev": "rslib build --watch",
+    "build": "node generateExports.cjs && rslib build",
+    "dev": "node generateExports.cjs && rslib build --watch",
     "format": "prettier --write .",
     "docs:dev": "rspress dev",
     "docs:build": "rspress build",

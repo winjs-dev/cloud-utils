@@ -5,11 +5,23 @@ export default defineConfig({
     {
       format: 'esm',
       syntax: 'es5',
-      dts: true,
+      dts: true
     },
     {
       format: 'cjs',
-      syntax: 'es5',
+      syntax: 'es5'
+    },
+    {
+      format: 'umd',
+      umdName: 'cloud-utils',
+      output: {
+        distPath: {
+          root: './dist/umd',
+        },
+      }
     },
   ],
+  output: {
+    target: 'web',
+  },
 });
