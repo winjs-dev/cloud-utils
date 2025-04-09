@@ -66,6 +66,7 @@ const siteUrl = 'https://winjs-dev.github.io/cloud-utils/';
 export default defineConfig({
   title: '@winner-fed/cloud-utils',
   description: '@winner-fed/cloud-utils API文档',
+  base: '/cloud-utils/',
   themeConfig: {
     searchPlaceholderText: '搜索文档',
     nav: [

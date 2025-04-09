@@ -32,6 +32,7 @@
     "format": "prettier --write .",
     "docs:dev": "rspress dev",
     "docs:build": "rspress build",
+    "preview": "rspress preview",
     "docs:deploy": "gh-pages -d doc_build"
   },
   "devDependencies": {
