@@ -1,52 +1,53 @@
 /**
- * Date 转化为指定格式的String
- * 月(M)、日(d)、12小时(h)、24小时(H)、分(m)、秒(s)、周(E)、季度(q)可以用 1-2 个占位符
- * 年(y)可以用 1-4 个占位符，毫秒(S)只能用 1 个占位符(是 1-3 位的数字)
- *
- * @param date - 日期，支持字符串或数字形式：20160126 12:00:00，2016-01-26 12:00:00，2016.01.26 12:00:00，20160126，2016-01-26 12:00:00.0
- * @param fmt - 格式化字符串
- * @returns 格式化后的日期字符串
+ * 将Date对象或时间戳转换为指定格式的字符串
+ * @description 支持多种日期格式输出，包括年月日时分秒、季度、星期等
+ * @param {Date|number|string} [date=Date.now()] - 日期对象、时间戳或日期字符串
+ * @param {string} [fmt='yyyy-MM-dd HH:mm:ss'] - 格式化字符串：
+ *   - y: 年(1-4位)
+ *   - M: 月(1-2位)
+ *   - d: 日(1-2位)
+ *   - h: 12小时制(1-2位)
+ *   - H: 24小时制(1-2位)
+ *   - m: 分钟(1-2位)
+ *   - s: 秒(1-2位)
+ *   - q: 季度(1位)
+ *   - S: 毫秒(1-3位)
+ *   - E: 星期(1-3位)
+ * @returns {string} 格式化后的日期字符串
+ * @throws {Error} 当日期参数无效时抛出
  * @example
- *
- * formatDate(Date.now(), 'yyyy-MM-dd hh:mm:ss.S');
- * // => '2006-07-02 08:09:04.423'
- *
- * formatDate(Date.now(), 'yyyy-MM-dd E HH:mm:ss');
- * // => '2009-03-10 二 20:09:04'
- *
- * formatDate(Date.now(), 'yyyy-MM-dd EE hh:mm:ss');
- * // => '2009-03-10 周二 08:09:04'
- *
- * formatDate(Date.now(), 'yyyy-MM-dd EEE hh:mm:ss');
- * // => '2009-03-10 星期二 08:09:04'
- *
- * formatDate(Date.now(), 'yyyy-M-d h:m:s.S')
- * // => '2006-7-2 8:9:4.18'
+ * formatDate(new Date(), 'yyyy-MM-dd HH:mm:ss');
+ * // => '2023-06-15 14:30:45'
  */
-export function formatDate(date: string | number | Date = Date.now(), fmt: string = 'yyyy-MM-dd HH:mm:ss'): string {
+export function formatDate(date: Date | number | string = Date.now(), fmt: string = 'yyyy-MM-dd HH:mm:ss'): string {
+  let dateObj: Date;
+
   if (typeof date === 'string' && date.length) {
-    date = new Date(formatTimeByPattern(date));
+    dateObj = new Date(formatTimeByPattern(date));
   } else if (typeof date === 'number' && !isNaN(date)) {
-    date = new Date(date);
+    dateObj = new Date(date);
   } else if (date instanceof Date) {
-    // do nothing
+    dateObj = date;
   } else {
-    // 空字符串，NaN
-    date = new Date();
+    dateObj = new Date();
   }
-  
-  const o = {
-    'M+': date.getMonth() + 1, // 月份
-    'd+': date.getDate(), // 日
-    'h+': date.getHours() % 12 === 0 ? 12 : date.getHours() % 12, // 小时
-    'H+': date.getHours(), // 小时
-    'm+': date.getMinutes(), // 分
-    's+': date.getSeconds(), // 秒
-    'q+': Math.floor((date.getMonth() + 3) / 3), // 季度
-    'S': date.getMilliseconds() // 毫秒
+
+  if (isNaN(dateObj.getTime())) {
+    throw new Error('无效的日期参数');
+  }
+
+  const o: Record<string, number> = {
+    'M+': dateObj.getMonth() + 1, // 月份
+    'd+': dateObj.getDate(), // 日
+    'h+': dateObj.getHours() % 12 === 0 ? 12 : dateObj.getHours() % 12, // 小时
+    'H+': dateObj.getHours(), // 小时
+    'm+': dateObj.getMinutes(), // 分
+    's+': dateObj.getSeconds(), // 秒
+    'q+': Math.floor((dateObj.getMonth() + 3) / 3), // 季度
+    'S': dateObj.getMilliseconds() // 毫秒
   };
-  
-  const week = {
+
+  const week: Record<string, string> = {
     '0': '日',
     '1': '一',
     '2': '二',
@@ -56,17 +57,26 @@ export function formatDate(date: string | number | Date = Date.now(), fmt: strin
     '6': '六'
   };
 
-  if (/(y+)/.test(fmt)) {
-    fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length));
+  let matchResult: RegExpMatchArray | null;
+  if ((matchResult = /(y+)/.exec(fmt))) {
+    fmt = fmt.replace(matchResult[0], (dateObj.getFullYear() + '').substring(4 - matchResult[1].length));
   }
 
-  if (/(E+)/.test(fmt)) {
-    fmt = fmt.replace(RegExp.$1, ((RegExp.$1.length > 1) ? (RegExp.$1.length > 2 ? '星期' : '周') : '') + week[date.getDay() + '']);
+  if ((matchResult = /(E+)/.exec(fmt))) {
+    const dayKey = dateObj.getDay().toString() as keyof typeof week;
+    const prefix = matchResult[1].length > 1 ?
+      (matchResult[1].length > 2 ? '星期' : '周') : '';
+    fmt = fmt.replace(matchResult[0], prefix + week[dayKey]);
   }
 
   for (const k in o) {
-    if (new RegExp('(' + k + ')').test(fmt)) {
-      fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (('00' + o[k]).substr(('' + o[k]).length)));
+    const pattern = new RegExp(`(${k})`);
+    if ((matchResult = pattern.exec(fmt))) {
+      const value = o[k];
+      const replacement = matchResult[1].length === 1 ?
+        value.toString() :
+        ('00' + value).substring(('' + value).length);
+      fmt = fmt.replace(matchResult[0], replacement);
     }
   }
 
@@ -74,32 +84,23 @@ export function formatDate(date: string | number | Date = Date.now(), fmt: strin
 }
 
 /**
- * 将日期字符串转换为/连接的格式
+ * 将日期字符串统一转换为/分隔的格式
  * @private
+ * @param {string} val - 日期字符串
+ * @returns {string} 格式化后的日期字符串
  */
 function formatTimeByPattern(val: string): string {
-  // 2016-05-23 13:58:02.0
   if (val.length > 19) {
     val = val.substring(0, 19);
   }
 
-  const pattern = /-|\./g;
-  let year;
-  let month;
-  let day;
-  let reset;
-
-  if (pattern.test(val)) {
-    return val.replace(pattern, '/');
-  } else {
-    // 若无'-'，则不处理
-    if (!val.includes('-')) {
-      year = val.slice(0, 4);
-      month = val.slice(4, 6);
-      day = val.slice(6, 8);
-      reset = val.slice(8);
-      return `${year}/${month}/${day}${reset}`;
-    }
-    return val;
+  if (/[-.]/.test(val)) {
+    return val.replace(/[-.]/g, '/');
   }
+
+  if (val.length >= 8 && !val.includes('-')) {
+    return `${val.slice(0, 4)}/${val.slice(4, 6)}/${val.slice(6)}`;
+  }
+
+  return val;
 }

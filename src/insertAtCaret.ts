@@ -1,6 +1,6 @@
 /**
  * 将文本插入到文本区域的光标位置
- * 
+ *
  * _应用场景：_如在评论框里，在光标位置里插入emoji等
  *
  * @param {HTMLTextAreaElement | HTMLInputElement} dom - 文本区域或输入框DOM对象
@@ -15,13 +15,13 @@
  * // => 在光标位置插入'hello world'
  */
 export function insertAtCaret(dom: HTMLTextAreaElement | HTMLInputElement, str: string = ''): void {
-  if (document.selection) { // IE
-    const sel = document.selection.createRange();
+  if ((document as any).selection) { // IE
+    const sel = (document as any).selection.createRange();
     sel.text = str;
   } else if (typeof dom.selectionStart === 'number' && typeof dom.selectionEnd === 'number') {
     const startPos = dom.selectionStart;
     const endPos = dom.selectionEnd;
-    const cursorPos = startPos;
+    let cursorPos = startPos;  // 修改为 let 声明
     const tmpStr = dom.value;
 
     dom.value = tmpStr.substring(0, startPos) + str + tmpStr.substring(endPos, tmpStr.length);

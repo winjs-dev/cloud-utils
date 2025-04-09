@@ -18,21 +18,22 @@ export function setCookie(params: {
   minSec?: number;
 }): boolean {
   const cookieEnabled = window.navigator.cookieEnabled;
-  if (name && cookieEnabled) {
-    path = path || '/';
-    if (typeof value == 'object') {
+  if (params.name && cookieEnabled) {
+    const path = params.path || '/';
+    let value = params.value;
+    if (typeof value === 'object') {
       value = JSON.stringify(value);
     }
     let exp;
-    if (minSec) {
-      exp = new Date(); // new Date("December 31, 9998");
-      exp.setTime(exp.getTime() + minSec * 1000);
+    if (params.minSec) {
+      exp = new Date();
+      exp.setTime(exp.getTime() + params.minSec * 1000);
     } else {
       exp = new Date("9998-01-01");
     }
-    let cookieString = `${name}=${escape(value)}${minSec?(`;expires=${exp.toGMTString()}`) : ''};path=${path};`;
-    if(domain){
-      cookieString += `domain=${domain};`;
+    let cookieString = `${params.name}=${encodeURIComponent(String(value))}${params.minSec ? (`;expires=${exp.toUTCString()}`) : ''};path=${path};`;
+    if(params.domain){
+      cookieString += `domain=${params.domain};`;
     }
     document.cookie = cookieString;
     return true;
@@ -65,9 +66,8 @@ export function getCookie(name: string): string | null {
  * @example
  * clearCookie('example.com');
  */
-export function clearCookie(domain?: string, path?: string = '/'): void {
+export function clearCookie(domain?: string, path: string = '/'): void {
   const keys = document.cookie.match(/[^ =;]+(?=\=)/g);
-  path = path || '/';
   if (keys) {
     for (let i = keys.length; i--;) {
       let cookieString = `${keys[i]}=0;expires=${new Date(0).toUTCString()};path=${path};`;
@@ -78,7 +78,6 @@ export function clearCookie(domain?: string, path?: string = '/'): void {
     }
   }
 }
-
 /**
  * 删除指定 cookie
  * @param {string} name - cookie名称
@@ -88,10 +87,9 @@ export function clearCookie(domain?: string, path?: string = '/'): void {
  * @example
  * removeCookie('token', 'example.com');
  */
-export function removeCookie(name: string, domain?: string, path?: string = '/'): boolean {
+export function removeCookie(name: string, domain?: string, path: string = '/'): boolean {
   const cookieEnabled = window.navigator.cookieEnabled;
   if (name && cookieEnabled) {
-    path = path || '/';
     let cookieString = `${name}=0;expires=${new Date(0).toUTCString()};path=${path};`;
     if(domain){
       cookieString += `domain=${domain};`;
@@ -101,3 +99,4 @@ export function removeCookie(name: string, domain?: string, path?: string = '/')
   }
   return false;
 }
+

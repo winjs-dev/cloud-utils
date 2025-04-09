@@ -1,4 +1,4 @@
-import hasClass from './hasClass';
+import { hasClass } from './hasClass';
 
 /**
  * dom操作，元素添加某个class

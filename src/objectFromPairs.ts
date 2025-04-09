@@ -11,5 +11,5 @@
  * // => {a: 1, b: 2}
  */
 export function objectFromPairs<T>(array: Array<[string, T]>): {[key: string]: T} {
-  return Array.isArray(array) && array.reduce((a, v) => (a[v[0]] = v[1], a), {} as {[key: string]: T});
+  return array.reduce((a, v) => (a[v[0]] = v[1], a), {} as {[key: string]: T});
 }

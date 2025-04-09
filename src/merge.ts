@@ -21,7 +21,9 @@ export function merge<T>(...objs: Record<string, T>[]): Record<string, T[]> {
   return [...objs].reduce(
     (acc, obj) =>
       Object.keys(obj).reduce((a, k) => {
-        acc[k] = acc.hasOwnProperty(k) ? [].concat(acc[k]).concat(obj[k]) : obj[k];
+        acc[k] = acc.hasOwnProperty(k)
+          ? [...(Array.isArray(acc[k]) ? acc[k] : [acc[k]]), ...(Array.isArray(obj[k]) ? obj[k] : [obj[k]])]
+          : (Array.isArray(obj[k]) ? obj[k] : [obj[k]]);
         return acc;
       }, {} as Record<string, T[]>),
     {} as Record<string, T[]>

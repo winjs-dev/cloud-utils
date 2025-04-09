@@ -12,7 +12,7 @@
  * URLJoin('http://www.google.com', 'a', '/b/cd', '?foo=123', '?bar=foo');
  * // => 'http://www.google.com/a/b/cd?foo=123&bar=foo'
  */
-export function URLJoin(...args: string[]): string {
+export function urlJoin(...args: string[]): string {
   return args
     .join('/')
     .replace(/[\/]+/g, '/')

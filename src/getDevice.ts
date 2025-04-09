@@ -6,7 +6,7 @@
  * @FilePath: /cloud-utils-rslib/src/getDevice.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
-import '../.internal/ua-parser';
+import './.internal/ua-parser.js';
 
 declare global {
   interface Window {
@@ -28,10 +28,10 @@ interface DeviceInfo {
 
 /**
  * 获取移动设备信息，如是否是iOS，android等
- * 
+ *
  * @returns {DeviceInfo} 设备信息对象
  * @example
- * 
+ *
  * const device = getDevice();
  * console.log(device);
  * // => {

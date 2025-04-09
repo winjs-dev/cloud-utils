@@ -8,5 +8,5 @@
  * // => '3'
  */
 export function last<T>(array: T[]): T | undefined {
-  return Array.isArray(array) && array.slice(-1)[0];
+  return array.slice(-1)[0];
 }

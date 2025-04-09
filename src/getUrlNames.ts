@@ -1,5 +1,4 @@
-import getLocationHrefParam from './getLocationHrefParam';
-import isEmptyObject from './isEmptyObject';
+import { getLocationHrefParam } from './getLocationHrefParam';
 
 /**
  * 根据参数获取对应的值
@@ -31,5 +30,5 @@ export function getUrlNames(name: string): Record<string, string> {
     }
   }
 
-  return !isEmptyObject(o) ? o : '';
+  return o; // 直接返回对象，不再返回空字符串
 }
