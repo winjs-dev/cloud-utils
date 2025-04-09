@@ -1,31 +1,32 @@
 /**
- * 从两个或多个对象的组合中创建一个新对象
- * @template T - 对象值类型
+ * 深度合并多个对象
+ * @description 将多个对象的属性深度合并，数组属性会被展开合并，非数组属性会被转换为数组
+ * @template T - 对象值的类型
  * @param {...Record<string, T>[]} objs - 要合并的对象数组
  * @returns {Record<string, T[]>} 合并后的新对象
+ * @throws {TypeError} 当输入参数不是对象时抛出
  * @example
  * merge(
- *  {
- *    a: [{ x: 2 }, { y: 4 }],
- *    b: 1
- *  },
- *  {
- *    a: { z: 3 },
- *    b: [2, 3],
- *    c: 'foo'
- *  }
+ *   { a: 1, b: [2] },
+ *   { a: 2, b: [3], c: 'foo' }
  * );
- * // => { a: [ { x: 2 }, { y: 4 }, { z: 3 } ], b: [ 1, 2, 3 ], c: 'foo' }
+ * // => { a: [1, 2], b: [2, 3], c: ['foo'] }
  */
-export function merge<T>(...objs: Record<string, T>[]): Record<string, T[]> {
-  return [...objs].reduce(
-    (acc, obj) =>
-      Object.keys(obj).reduce((a, k) => {
-        acc[k] = acc.hasOwnProperty(k)
-          ? [...(Array.isArray(acc[k]) ? acc[k] : [acc[k]]), ...(Array.isArray(obj[k]) ? obj[k] : [obj[k]])]
-          : (Array.isArray(obj[k]) ? obj[k] : [obj[k]]);
-        return acc;
-      }, {} as Record<string, T[]>),
-    {} as Record<string, T[]>
-  );
+export function merge<T>(...objs: Array<Record<string, T>>): Record<string, T[]> {
+  if (!objs.every(obj => obj && typeof obj === 'object')) {
+    throw new TypeError('所有参数必须是对象');
+  }
+
+  return objs.reduce<Record<string, T[]>>((acc, obj) => {
+    Object.keys(obj).forEach(k => {
+      const currentValue = obj[k];
+      const existingValue = acc[k];
+
+      acc[k] = existingValue
+        ? [...(Array.isArray(existingValue) ? existingValue : [existingValue]),
+          ...(Array.isArray(currentValue) ? currentValue : [currentValue])]
+        : (Array.isArray(currentValue) ? currentValue : [currentValue]);
+    });
+    return acc;
+  }, {});
 }

@@ -27,7 +27,7 @@
     "@rspress/plugin-typedoc": "^1.43.9",
     "prettier": "^3.5.2",
     "rspress": "^1.43.9",
-    "typescript": "^5.1.2"
+    "typescript": "5.0.4"
   },
   "private": true
 }
