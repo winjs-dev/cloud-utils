@@ -3,6 +3,10 @@
   "description": "A collection of utils by winner fed",
   "version": "2.0.0",
   "type": "module",
+  "author": {
+    "name": "winner-fed",
+    "email": "cloudbroker@163.com"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -46,5 +50,6 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org",
     "access": "public"
-  }
+  },
+  "license": "MIT"
 }
