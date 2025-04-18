@@ -48,8 +48,7 @@ async function bumpVersion() {
   try {
     state.originalVersion = getCurrentVersion();
     
-    // 使用 npx 执行 bumpp，并添加 --no-esm 参数
-    execSync('npx bumpp --no-esm', { stdio: 'inherit' });
+    execSync('bumpp', { stdio: 'inherit' });
     
     const newVersion = getCurrentVersion();
     console.log(chalk.green(`版本已更新: ${state.originalVersion} -> ${newVersion}`));
