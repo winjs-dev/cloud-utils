@@ -33,7 +33,12 @@
     "docs:dev": "rspress dev",
     "docs:build": "rspress build",
     "preview": "rspress preview",
-    "docs:deploy": "gh-pages -d doc_build"
+    "docs:deploy": "gh-pages -d doc_build",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui",
+    "release": "node scripts/release.mjs",
+    "prepare": "husky install"
   },
   "dependencies": {
     "decimal.js": "^10.4.1"
@@ -41,11 +46,17 @@
   "devDependencies": {
     "@rslib/core": "^0.6.1",
     "@rspress/plugin-typedoc": "^1.43.9",
+    "@vitest/coverage-v8": "^1.3.1",
     "gh-pages": "^6.3.0",
     "prettier": "^3.5.2",
     "rspress": "^1.43.9",
     "rspress-plugin-sitemap": "^1.1.1",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "vitest": "^1.3.1",
+    "bumpp": "^9.1.1",
+    "chalk": "^4.1.2",
+    "husky": "^8.0.3",
+    "inquirer": "^8.2.5"
   },
   "repository": {
     "type": "git",
