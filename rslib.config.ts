@@ -5,8 +5,8 @@ const moduleName = 'cloud-utils';
 
 const banner =
   `/*!
- * ${moduleName} v${pkg.version} (https://github.com/cloud-templates/cloud-utils)
- * API https://cloud-templates.github.io/cloud-utils/
+ * ${moduleName} v${pkg.version} (https://github.com/winjs-dev/cloud-utils)
+ * API https://winjs-dev.github.io/cloud-utils/
  * Copyright 2017-${(new Date).getFullYear()} ${pkg.author.name}. All Rights Reserved
  * Licensed under ${pkg.license} (https://github.com/winjs/cloud-utils/blob/master/LICENSE)
  */
