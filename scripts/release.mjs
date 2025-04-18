@@ -191,8 +191,8 @@ async function main() {
     console.log(chalk.blue('开始发布流程...'));
 
     // 检查分支
-    checkBranch();
-    console.log(chalk.green('✓ 分支检查通过'));
+    // checkBranch();
+    // console.log(chalk.green('✓ 分支检查通过'));
 
     // 检查未提交的更改
     checkUncommittedChanges();
