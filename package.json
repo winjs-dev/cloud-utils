@@ -38,7 +38,7 @@
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
     "release": "node scripts/release.mjs",
-    "prepare": "simple-git-hooks",
+    "postinstall": "simple-git-hooks",
     "type-check": "tsc --noEmit"
   },
   "simple-git-hooks": {
