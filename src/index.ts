@@ -115,6 +115,7 @@ export { isValidZipcode } from './isValidZipcode';
 export { last } from './last';
 export { mapKeys } from './mapKeys';
 export { mapValues } from './mapValues';
+export * from './math';
 export { merge } from './merge';
 export { numberToChinese } from './numberToChinese';
 export { objectFromPairs } from './objectFromPairs';

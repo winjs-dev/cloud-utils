@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      decimal.js:
+        specifier: ^10.4.1
+        version: 10.5.0
     devDependencies:
       '@rslib/core':
         specifier: ^0.6.1
@@ -49,28 +53,24 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@ast-grep/napi-linux-arm64-musl@0.36.2':
     resolution: {integrity: sha512-RIuk0VaQW2b5uOPJzuYFQBwMZIEVnp6maXPjnatUHxfniirSI172E7LtOU/FIEpCjU9Fpq23A79S43ImFt1KLA==}
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@ast-grep/napi-linux-x64-gnu@0.36.2':
     resolution: {integrity: sha512-Xmb50HPfRNi+iLtHp+8/dqiTd8tjArYxOdj1tZzjRndpKhFpQDVrcOnPFObDCRgxVeLovdql9A1ad6BMcEL01Q==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@ast-grep/napi-linux-x64-musl@0.36.2':
     resolution: {integrity: sha512-RSnqCsl3OBfJWh2rETtv3o7xd4QnbB2YTh6H6oYfFhhX0tlon/V+bUXI77hU2/W73hj9GHqWZsygsF43NXn/Hw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@ast-grep/napi-win32-arm64-msvc@0.36.2':
     resolution: {integrity: sha512-/Q85h8F9K2G8qig0lndZWb+ykCfhfpSN27F3i7Aw5C0Ph7S6vFH76xn3l3dJTZb2CwUSsv4JNoqmFmY4B8DExQ==}
@@ -264,49 +264,41 @@ packages:
     resolution: {integrity: sha512-VykY/kiYOzO8E1nYzfJ9+gQEHxb5B6lt5wa8M6xFi5B6jEGU+OsaGskmAZB9/GFImeFDHxDPvhUalI4R9p8O2Q==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@rspack/binding-linux-arm64-gnu@1.3.0':
     resolution: {integrity: sha512-acj5ikpIvkjy1sEV818RL+tK+EYvj1/g0jBqfttuCdczMMDzb1ciGEOHIuqONCMNdoCpieYnGt65rRwSS7NVHQ==}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
 
   '@rspack/binding-linux-arm64-musl@1.2.2':
     resolution: {integrity: sha512-Z5vAC4wGfXi8XXZ6hs8Q06TYjr3zHf819HB4DI5i4C1eQTeKdZSyoFD0NHFG23bP4NWJffp8KhmoObcy9jBT5Q==}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@rspack/binding-linux-arm64-musl@1.3.0':
     resolution: {integrity: sha512-8BVoZTmxreQXSoSfUObydaVjVxYUReTZMpdmLTaewBs2KaoZEC8RvddLbEupiLie23Wwz02WDAiSUG1+zuCi5Q==}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
 
   '@rspack/binding-linux-x64-gnu@1.2.2':
     resolution: {integrity: sha512-o3pDaL+cH5EeRbDE9gZcdZpBgp5iXvYZBBhe8vZQllYgI4zN5MJEuleV7WplG3UwTXlgZg3Kht4RORSOPn96vg==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@rspack/binding-linux-x64-gnu@1.3.0':
     resolution: {integrity: sha512-8QC553EczUmeVtr5Dqc+TocStYoKHbT6CFRb52sqaLOhka6r/zgchvKYmji+51gohfD5f0gtqjkb2pLWGPHE7w==}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
 
   '@rspack/binding-linux-x64-musl@1.2.2':
     resolution: {integrity: sha512-RE3e0xe4DdchHssttKzryDwjLkbrNk/4H59TkkWeGYJcLw41tmcOZVFQUOwKLUvXWVyif/vjvV/w1SMlqB4wQg==}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@rspack/binding-linux-x64-musl@1.3.0':
     resolution: {integrity: sha512-Zi4vUONm94iN5oO6k8yc7a7AP4H24qesG8J4wNnByZIcSuhFeXhQbkEF+45BY/Kw4HB5K2gU/Oqd+kVlRwqIuQ==}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
 
   '@rspack/binding-win32-arm64-msvc@1.2.2':
     resolution: {integrity: sha512-R+PKBYn6uzTaDdVqTHvjqiJPBr5ZHg1wg5UmFDLNH9OklzVFyQh1JInSdJRb7lzfzTRz6bEkkwUFBPQK/CGScw==}
@@ -738,6 +730,9 @@ packages:
     peerDependenciesMeta:
       supports-color:
         optional: true
+
+  decimal.js@10.5.0:
+    resolution: {integrity: sha512-8vDa8Qxvr/+d94hSh5P3IJwI5t8/c0KsMp+g8bNw9cY2icONa5aPfvKeieW1WlG0WQYwwhJ7mjui2xtiePQSXw==}
 
   decode-named-character-reference@1.1.0:
     resolution: {integrity: sha512-Wy+JTSbFThEOXQIR2L6mxJvEs+veIzpmqD7ynWxMXGpnk3smkHQOp6forLdHsKpAMW9iJpaBBIxz285t1n1C3w==}
@@ -2800,6 +2795,8 @@ snapshots:
   debug@4.4.0:
     dependencies:
       ms: 2.1.3
+
+  decimal.js@10.5.0: {}
 
   decode-named-character-reference@1.1.0:
     dependencies:
