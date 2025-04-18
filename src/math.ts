@@ -2,7 +2,7 @@
  * @Author: liwb lwbhtml@163.com
  * @Date: 2025-04-18 13:54:44
  * @LastEditors: liwb lwbhtml@163.com
- * @LastEditTime: 2025-04-18 14:01:21
+ * @LastEditTime: 2025-04-18 15:23:27
  * @FilePath: /cloud-utils/src/math.ts
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -27,7 +27,7 @@ import { Decimal } from 'decimal.js';
  * @returns {number} 商
  * @throws {Error} 当除数为0时抛出错误
  */
-function mathDivide(arg1: number | string, arg2: number | string, precision: number = 10): number {
+export function mathDivide(arg1: number | string, arg2: number | string, precision: number = 10): number {
   if (arg2 === 0 || arg2 === '0') {
     throw new Error('除数不能为0');
   }
@@ -48,7 +48,7 @@ function mathDivide(arg1: number | string, arg2: number | string, precision: num
  * @param {number} [precision] 精度，默认保留10位小数
  * @returns {number} 和
  */
-function mathAdd(arg1: number | string, arg2: number | string, precision: number = 10): number {
+export function mathAdd(arg1: number | string, arg2: number | string, precision: number = 10): number {
   const x = new Decimal(arg1);
   const y = new Decimal(arg2);
   return Number(x.plus(y).toDecimalPlaces(precision));
@@ -61,7 +61,7 @@ function mathAdd(arg1: number | string, arg2: number | string, precision: number
  * @param {number} [precision] 精度，默认保留10位小数
  * @returns {number} 差
  */
-function mathSubtract(arg1: number | string, arg2: number | string, precision: number = 10): number {
+export function mathSubtract(arg1: number | string, arg2: number | string, precision: number = 10): number {
   const x = new Decimal(arg1);
   const y = new Decimal(arg2);
   return Number(x.minus(y).toDecimalPlaces(precision));
@@ -74,18 +74,11 @@ function mathSubtract(arg1: number | string, arg2: number | string, precision: n
  * @param {number} [precision] 精度，默认保留10位小数
  * @returns {number} 积
  */
-function mathMultiply(arg1: number | string, arg2: number | string, precision: number = 10): number {
+export function mathMultiply(arg1: number | string, arg2: number | string, precision: number = 10): number {
   const x = new Decimal(arg1);
   const y = new Decimal(arg2);
   return Number(x.times(y).toDecimalPlaces(precision));
 }
-
-export {
-  mathDivide,
-  mathAdd,
-  mathSubtract,
-  mathMultiply
-};
 
 // 测试用例
 // console.log(mathDivide(5.1, 3));        // 1.7

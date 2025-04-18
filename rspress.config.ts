@@ -1,3 +1,11 @@
+/*
+ * @Author: liwb lwbhtml@163.com
+ * @Date: 2025-04-02 09:23:33
+ * @LastEditors: liwb lwbhtml@163.com
+ * @LastEditTime: 2025-04-18 15:19:04
+ * @FilePath: /cloud-utils/rspress.config.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import { defineConfig } from 'rspress/config';
 import { pluginTypeDoc } from '@rspress/plugin-typedoc';
 import path from 'path';
@@ -65,14 +73,29 @@ const siteUrl = 'https://winjs-dev.github.io/cloud-utils/';
 
 export default defineConfig({
   title: '@winner-fed/cloud-utils',
-  description: '@winner-fed/cloud-utils API文档',
+  description: '一个实用的工具类库',
   base: '/cloud-utils/',
   themeConfig: {
     searchPlaceholderText: '搜索文档',
     nav: [
+      {
+        text: '指南',
+        link: '/guide/getting-started',
+      },
       { text: 'API', link: '/api' },
     ],
     sidebar: {
+      '/guide/': [
+        {
+          text: '指南',
+          items: [
+            {
+              text: '快速开始',
+              link: '/guide/getting-started',
+            },
+          ],
+        },
+      ],
       '/api/': [
         {
           text: '核心方法',
