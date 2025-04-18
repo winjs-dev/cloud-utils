@@ -37,7 +37,7 @@
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
-    "release": "bumpp --commit --push --tag",
+    "release": "pnpm build && bumpp --commit --push --tag && pnpm publish --no-git-checks",
     "postinstall": "simple-git-hooks",
     "type-check": "tsc --noEmit"
   },
