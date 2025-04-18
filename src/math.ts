@@ -1,6 +1,20 @@
+/*
+ * @Author: liwb lwbhtml@163.com
+ * @Date: 2025-04-18 13:54:44
+ * @LastEditors: liwb lwbhtml@163.com
+ * @LastEditTime: 2025-04-18 14:01:21
+ * @FilePath: /cloud-utils/src/math.ts
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 /**
  * 精确数学运算工具类
- * 使用 Decimal.js 库实现高精度计算
+ * 使用 Decimal.js 库实现高精度计算。
+ * 完整的浮点数运算支持
+ * 精度可控
+ * 支持科学计数法
+ * 处理大数和小数都很可靠
+ * 提供了丰富的数学运算方法
+ * 适合金融计算等高精度场景
  */
 
 import { Decimal } from 'decimal.js';
