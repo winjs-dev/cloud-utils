@@ -47,42 +47,11 @@ function getCurrentVersion() {
 async function bumpVersion() {
   try {
     state.originalVersion = getCurrentVersion();
-    const currentVersion = state.originalVersion.split('.').map(Number);
     
-    // 询问要更新的版本类型
-    const { versionType } = await inquirer.prompt([
-      {
-        type: 'list',
-        name: 'versionType',
-        message: '选择要更新的版本类型:',
-        choices: [
-          { name: '主版本号 (major)', value: 'major' },
-          { name: '次版本号 (minor)', value: 'minor' },
-          { name: '修订号 (patch)', value: 'patch' }
-        ]
-      }
-    ]);
-
-    // 根据选择更新版本号
-    let newVersion;
-    switch (versionType) {
-      case 'major':
-        newVersion = `${currentVersion[0] + 1}.0.0`;
-        break;
-      case 'minor':
-        newVersion = `${currentVersion[0]}.${currentVersion[1] + 1}.0`;
-        break;
-      case 'patch':
-        newVersion = `${currentVersion[0]}.${currentVersion[1]}.${currentVersion[2] + 1}`;
-        break;
-    }
-
-    // 更新 package.json
-    const pkgPath = join(process.cwd(), 'package.json');
-    const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
-    pkg.version = newVersion;
-    writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n');
-
+    // 使用 npx 执行 bumpp，并添加 --no-esm 参数
+    execSync('npx bumpp --no-esm', { stdio: 'inherit' });
+    
+    const newVersion = getCurrentVersion();
     console.log(chalk.green(`版本已更新: ${state.originalVersion} -> ${newVersion}`));
   } catch (error) {
     console.error(chalk.red('版本更新失败'));
