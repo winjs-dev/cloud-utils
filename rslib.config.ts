@@ -41,6 +41,11 @@ export default defineConfig({
       }
     }
   ],
+  source: {
+    exclude: [
+      'src/__tests__/'
+    ]
+  },
   output: {
     target: 'web'
   }

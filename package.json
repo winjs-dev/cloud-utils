@@ -11,11 +11,10 @@
     ".": {
       "import": {
         "types": "./dist/index.d.ts",
-        "default": "./dist/esm/index.js"
+        "default": "./dist/index.js"
       },
       "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/umd/index.js"
+        "default": "./dist/index.cjs"
       }
     }
   },
@@ -44,6 +43,7 @@
     "test:ui": "vitest --ui",
     "release": "pnpm build && bumpp --commit --push --tag && pnpm publish --no-git-checks",
     "postinstall": "simple-git-hooks",
+    "lint:package": "publint",
     "type-check": "tsc --noEmit"
   },
   "simple-git-hooks": {
@@ -59,6 +59,7 @@
     "bumpp": "^10.1.0",
     "gh-pages": "^6.3.0",
     "prettier": "^3.5.2",
+    "publint": "^0.3.12",
     "rspress": "^1.43.9",
     "rspress-plugin-sitemap": "^1.1.1",
     "simple-git-hooks": "^2.9.0",
