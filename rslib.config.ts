@@ -24,6 +24,9 @@ export default defineConfig({
     {
       format: 'cjs',
       syntax: 'es5',
+      dts: {
+        autoExtension: true
+      },
       banner: {
         js: banner
       }
@@ -43,7 +46,7 @@ export default defineConfig({
   ],
   source: {
     exclude: [
-      'src/__tests__/'
+     /src\/__tests__/
     ]
   },
   output: {
