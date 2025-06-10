@@ -10,7 +10,7 @@ Dependabot 报告了 esbuild 的安全漏洞：
 
 ### 解决方案
 
-由于 `@rslib/core` 依赖的 esbuild 版本较旧，我们使用 pnpm overrides 强制更新到安全版本。
+由于 `@rslib/core` 依赖的 esbuild 版本较旧，我们使用 `resolutions` 强制更新传递依赖到安全版本。
 
 #### 配置详情
 
@@ -18,13 +18,16 @@ Dependabot 报告了 esbuild 的安全漏洞：
 
 ```json
 {
-  "pnpm": {
-    "overrides": {
-      "esbuild": "^0.25.0"
-    }
+  "resolutions": {
+    "esbuild": "^0.25.0"
   }
 }
 ```
+
+**注意**：我们选择使用 `resolutions` 而不是 `pnpm.overrides`，因为：
+1. `resolutions` 是更通用的标准，被多个包管理器支持
+2. Dependabot 对 pnpm 的 overrides 功能支持有限
+3. 避免了 "updating transitive dependencies" 的兼容性问题
 
 #### Dependabot 配置
 
@@ -45,7 +48,7 @@ ignore:
 
 ### 维护
 
-当 `@rslib/core` 更新其 esbuild 依赖到安全版本时，可以移除 pnpm overrides 配置。
+当 `@rslib/core` 更新其 esbuild 依赖到安全版本时，可以移除 resolutions 配置。
 
 定期检查：
 1. `@rslib/core` 的更新日志
@@ -55,5 +58,6 @@ ignore:
 ### 相关链接
 
 - [esbuild 安全公告](https://github.com/evanw/esbuild/security/advisories)
-- [pnpm overrides 文档](https://pnpm.io/package_json#pnpmoverrides)
+- [Package.json resolutions 文档](https://classic.yarnpkg.com/lang/en/docs/selective-version-resolutions/)
+- [pnpm resolutions 支持](https://pnpm.io/package_json#resolutions)
 - [Dependabot 配置文档](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file) 
