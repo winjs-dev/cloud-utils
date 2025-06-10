@@ -54,7 +54,7 @@
   },
   "dependencies": {
     "decimal.js": "^10.4.1"
-  },
+  },g
   "devDependencies": {
     "@rslib/core": "^0.9.2",
     "@rspress/plugin-typedoc": "^1.43.9",
@@ -81,6 +81,9 @@
   },
   "resolutions": {
     "esbuild": "^0.25.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["core-js"]
   },
   "license": "MIT"
 }
