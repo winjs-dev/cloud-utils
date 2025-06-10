@@ -35,6 +35,7 @@
     "build": "node generateExports.cjs && rslib build",
     "dev": "node generateExports.cjs && rslib build --watch",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "docs:dev": "rspress dev",
     "docs:build": "rspress build",
     "preview": "rspress preview",

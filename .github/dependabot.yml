@@ -1,0 +1,33 @@
+version: 2
+updates:
+  # npm 依赖更新
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 10
+    reviewers:
+      - "winjs-dev"
+    assignees:
+      - "winjs-dev"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+
+  # GitHub Actions 更新
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "winjs-dev"
+    assignees:
+      - "winjs-dev"
+    commit-message:
+      prefix: "ci"
+      include: "scope" 
