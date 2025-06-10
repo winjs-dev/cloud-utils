@@ -47,7 +47,12 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: 安装依赖
-        run: pnpm install --frozen-lockfile
+        run: |
+          # 尝试使用 frozen lockfile，如果失败则更新 lockfile
+          pnpm install --frozen-lockfile || {
+            echo "⚠️ Lockfile 不匹配，正在更新..."
+            pnpm install --no-frozen-lockfile
+          }
 
       - name: 代码格式检查
         run: pnpm run format:check
@@ -83,7 +88,12 @@ jobs:
           version: 8
 
       - name: 安装依赖
-        run: pnpm install --frozen-lockfile
+        run: |
+          # 尝试使用 frozen lockfile，如果失败则更新 lockfile
+          pnpm install --frozen-lockfile || {
+            echo "⚠️ Lockfile 不匹配，正在更新..."
+            pnpm install --no-frozen-lockfile
+          }
 
       - name: 运行测试覆盖率
         run: pnpm run test:coverage

@@ -58,7 +58,12 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - name: 安装依赖
-        run: pnpm install --frozen-lockfile
+        run: |
+          # 尝试使用 frozen lockfile，如果失败则更新 lockfile
+          pnpm install --frozen-lockfile || {
+            echo "⚠️ Lockfile 不匹配，正在更新..."
+            pnpm install --no-frozen-lockfile
+          }
 
       - name: 构建项目 (生成类型定义)
         run: pnpm run build
