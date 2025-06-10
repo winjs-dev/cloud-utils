@@ -2,9 +2,7 @@
  * @Author: liwb lwbhtml@163.com
  * @Date: 2025-04-01 13:07:17
  * @LastEditors: liwb lwbhtml@163.com
- * @LastEditTime: 2025-04-01 13:12:55
- * @FilePath: /cloud-utils-rslib/src/getDevice.ts
- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @LastEditTime: 2025-06-10 13:12:55
  */
 import './.internal/ua-parser.js';
 
@@ -15,19 +13,21 @@ declare global {
 }
 
 interface DeviceInfo {
+  isLightOS: boolean;
+  hms: boolean;
   android: boolean;
   iphone: boolean;
   ipad: boolean;
   result: any; // UAParser result type
   osVersion: string;
-  os?: 'android' | 'ios';
+  os?: 'android' | 'ios' | 'HarmonyOS';
   androidChrome?: boolean;
   ios?: boolean;
   webView: boolean | null;
 }
 
 /**
- * 获取移动设备信息，如是否是iOS，android等
+ * 获取移动设备信息，如是否是iOS，android、hms、isLightOS等
  *
  * @returns {DeviceInfo} 设备信息对象
  * @example
@@ -56,6 +56,8 @@ export function getDevice(): DeviceInfo {
     android: false,
     iphone: false,
     ipad: false,
+    hms: false,
+    isLightOS: false,
     result,
     osVersion: os.version,
     webView: null
@@ -65,10 +67,14 @@ export function getDevice(): DeviceInfo {
   const ipad = deviceInfo.model === 'iPad';
   const ipod = deviceInfo.model === 'iPod';
   const iphone = deviceInfo.model === 'iPhone';
+  const hms = ua.toLowerCase().indexOf('arkweb') !== -1;
+  const isLightOS = ua.toLowerCase().indexOf('lightos') !== -1;
 
   device.android = android;
   device.iphone = iphone;
   device.ipad = ipad;
+  device.hms = hms;
+  device.isLightOS = isLightOS;
 
   // Android
   if (android) {
@@ -78,6 +84,11 @@ export function getDevice(): DeviceInfo {
   if (ipad || iphone || ipod) {
     device.os = 'ios';
     device.ios = true;
+  }
+
+  // HarmonyOS
+  if (hms) {
+    device.os = 'HarmonyOS';
   }
 
   // Webview
