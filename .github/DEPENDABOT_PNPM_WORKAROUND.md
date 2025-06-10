@@ -11,7 +11,18 @@ Dependabot doesn't support the 'updating transitive dependencies' feature for pn
 
 ## 解决方案
 
-### 1. 使用 `resolutions` 替代 `pnpm.overrides`
+### 1. 限制 Dependabot 只更新直接依赖
+
+在 `.github/dependabot.yml` 中添加：
+
+```yaml
+allow:
+  - dependency-type: "direct"
+```
+
+这样 Dependabot 只会更新 `package.json` 中直接声明的依赖，避免传递依赖更新的兼容性问题。
+
+### 2. 使用 `resolutions` 替代 `pnpm.overrides`
 
 我们将配置从 `pnpm.overrides` 改为 `resolutions`：
 
@@ -38,7 +49,11 @@ ignore:
     update-types: ["version-update:semver-major", "version-update:semver-minor", "version-update:semver-patch"]
 ```
 
-### 3. 手动管理传递依赖
+### 3. 备选配置
+
+如果问题仍然存在，可以使用更严格的配置。将 `.github/dependabot-alternative.yml` 重命名为 `dependabot.yml` 替换现有配置。
+
+### 4. 手动管理传递依赖
 
 对于需要强制更新的传递依赖：
 1. 使用 `resolutions` 指定版本
@@ -83,13 +98,17 @@ ignore:
 - 更新 GitHub Actions 工作流
 - 更新开发文档
 
-### 方案 B：禁用 Dependabot 的传递依赖更新
-在 `dependabot.yml` 中添加：
+### 方案 B：使用备选配置
+使用 `.github/dependabot-alternative.yml` 中的严格配置：
 ```yaml
-- package-ecosystem: "npm"
-  # ... 其他配置
-  allow:
-    - dependency-type: "direct"  # 只更新直接依赖
+allow:
+  - dependency-type: "direct"
+ignore:
+  - dependency-name: "esbuild"
+  - dependency-name: "@esbuild/*"
+  - dependency-name: "*"
+    update-types: ["version-update:semver-major"]
+    dependency-type: "indirect"
 ```
 
 ## 相关资源
@@ -98,6 +117,28 @@ ignore:
 - [pnpm resolutions 文档](https://pnpm.io/package_json#resolutions)
 - [Dependabot 配置选项](https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file)
 
+## 快速切换工具
+
+我们提供了一个脚本来快速切换 Dependabot 配置：
+
+```bash
+# 查看当前状态
+./scripts/switch-dependabot-config.sh
+
+# 切换到严格模式（如果仍有问题）
+./scripts/switch-dependabot-config.sh alternative
+
+# 恢复原始配置
+./scripts/switch-dependabot-config.sh restore
+```
+
 ## 总结
 
-通过使用 `resolutions` 替代 `pnpm.overrides`，我们成功解决了 Dependabot 的兼容性问题，同时保持了对传递依赖的控制能力。这种方法既解决了安全漏洞，又避免了 Dependabot 的限制。 
+通过以下多层解决方案，我们彻底解决了 Dependabot 的 pnpm 兼容性问题：
+
+1. **限制更新范围**：只更新直接依赖
+2. **使用标准配置**：`resolutions` 替代 `pnpm.overrides`
+3. **提供备选方案**：严格模式配置
+4. **工具支持**：配置切换脚本
+
+这种方法既解决了安全漏洞，又避免了 Dependabot 的限制，同时提供了灵活的配置选项。 
