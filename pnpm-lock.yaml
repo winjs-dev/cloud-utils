@@ -26,7 +26,7 @@ importers:
         version: 1.6.1(vitest@1.6.1(@types/node@24.0.0)(sass-embedded@1.86.1)(terser@5.42.0))
       bumpp:
         specifier: ^10.1.0
-        version: 10.1.0(magicast@0.3.5)
+        version: 10.1.1(magicast@0.3.5)
       chalk:
         specifier: ^4.1.2
         version: 4.1.2
@@ -961,8 +961,8 @@ packages:
     resolution: {integrity: sha512-Cxwpt2SfTzTtXcfOlzGEee8O+c+MmUgGrNiBcXnuWxuFJHe6a5Hz7qwhwe5OgaSYI0IJvkLqWX1ASG+cJOkEiA==}
     engines: {node: '>=10'}
 
-  ansis@3.17.0:
-    resolution: {integrity: sha512-0qWUglt9JEqLFr3w1I1pbrChn1grhaiAR2ocX1PP/flRmxgtwTzPFFFnfIlD6aMOLQZgSuCRlidD70lvx8yhzg==}
+  ansis@4.1.0:
+    resolution: {integrity: sha512-BGcItUBWSMRgOCe+SVZJ+S7yTRG0eGt9cXAHev72yuGcY23hnLA7Bky5L/xLyPINoSN95geovfBkqoTlNZYa7w==}
     engines: {node: '>=14'}
 
   anymatch@3.1.3:
@@ -1035,13 +1035,13 @@ packages:
   buffer@5.7.1:
     resolution: {integrity: sha512-EHcyIPBQ4BSGlvjB16k5KgAJ27CIsHY/2JBmCRReo48y9rQ3MaUzWX3KVlBa4U7MyX02HdVj0K7C3WaB3ju7FQ==}
 
-  bumpp@10.1.0:
-    resolution: {integrity: sha512-cM/4+kO2A2l3aDSL7tr/ALg8TWPihl1fDWHZyz55JlDmzd01Y+8Vq3YQ1ydeKDS4QFN+tKaLsVzhdDIb/cbsLQ==}
+  bumpp@10.1.1:
+    resolution: {integrity: sha512-69ejE1J5O5qDN3oRu2jRas1nQmi5zEYepjzbYPpi1znuDnp+zZ9Yezsf/nYauWeoMNALQ5toniNGET05Txj2cQ==}
     engines: {node: '>=18'}
     hasBin: true
 
-  c12@3.0.3:
-    resolution: {integrity: sha512-uC3MacKBb0Z15o5QWCHvHWj5Zv34pGQj9P+iXKSpTuSGFS0KKhUWf4t9AJ+gWjYOdmWCPEGpEzm8sS0iqbpo1w==}
+  c12@3.0.4:
+    resolution: {integrity: sha512-t5FaZTYbbCtvxuZq9xxIruYydrAGsJ+8UdP0pZzMiK2xl/gNiSOy0OxhLzHUEEb0m1QXYqfzfvyIFEmz/g9lqg==}
     peerDependencies:
       magicast: ^0.3.5
     peerDependenciesMeta:
@@ -1358,8 +1358,8 @@ packages:
     resolution: {integrity: sha512-VyhnebXciFV2DESc+p6B+y0LjSm0krU4OgJN44qFAhBY0TJ+1V61tYD2+wHusZ6F9n5K+vl8k0sTy7PEfV4qpg==}
     engines: {node: '>=16.17'}
 
-  exsolve@1.0.4:
-    resolution: {integrity: sha512-xsZH6PXaER4XoV+NiT7JHp1bJodJVT+cxeSH1G0f0tlT0lJqYuHUP3bUx2HtfTDvOagMINYp8rsqusxud3RXhw==}
+  exsolve@1.0.5:
+    resolution: {integrity: sha512-pz5dvkYYKQ1AHVrgOzBKWeP4u4FRb3a6DNK2ucr0OoNwYIU4QWsJ+NM36LLzORT+z845MzKHHhpXiUF5nvQoJg==}
 
   extend-shallow@2.0.1:
     resolution: {integrity: sha512-zCnTtlxNoAiDc3gqY2aYAWFx7XWWiasuF2K8Me5WbN8otHKTUKBwjPtNpRs/rbUZm7KxWAaNj7P1a/p52GbVug==}
@@ -1387,14 +1387,6 @@ packages:
 
   fault@1.0.4:
     resolution: {integrity: sha512-CJ0HCB5tL5fYTEA7ToAq5+kTwd++Borf1/bifxd9iT70QcXr4MRrO3Llf8Ifs70q+SJcGHFtnIE/Nw6giCtECA==}
-
-  fdir@6.4.3:
-    resolution: {integrity: sha512-PMXmW2y1hDDfTSRc9gaXIuCCRpuoz3Kaz8cUelp3smouvfT632ozg2vrT6lJsHKKOF59YLbOGfAWGUcKEfRMQw==}
-    peerDependencies:
-      picomatch: ^3 || ^4
-    peerDependenciesMeta:
-      picomatch:
-        optional: true
 
   fdir@6.4.6:
     resolution: {integrity: sha512-hiFoqpyZcfNm1yc4u8oWCf9A2c4D3QjCrks3zmoVKVxpQRzmPNar1hUJcBG2RQHvEVGDN+Jm81ZheVLAQMK6+w==}
@@ -2093,6 +2085,9 @@ packages:
   package-manager-detector@1.2.0:
     resolution: {integrity: sha512-PutJepsOtsqVfUsxCzgTTpyXmiAgvKptIgY4th5eq5UXXFhj5PxfQ9hnGkypMeovpAvVshFRItoFHYO18TCOqA==}
 
+  package-manager-detector@1.3.0:
+    resolution: {integrity: sha512-ZsEbbZORsyHuO00lY1kV3/t72yp6Ysay6Pd17ZAlNGuGwmWDLCJxFpRs0IzfXfj1o4icJOkUEioexFHzyPurSQ==}
+
   parse-entities@2.0.0:
     resolution: {integrity: sha512-kkywGpCcRYhqQIchaWqZ875wzpS/bMKhz5HnN3p7wveJTkTtyAB/AlnS0f8DFSqYW1T82t6yEAkEcB+A1I3MbQ==}
 
@@ -2505,8 +2500,8 @@ packages:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
 
-  semver@7.7.1:
-    resolution: {integrity: sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA==}
+  semver@7.7.2:
+    resolution: {integrity: sha512-RF0Fw+rO5AMf9MAyaRXI4AV0Ulj5lMHqVxxdSgiVbixSCXoEmmX/jk0CuJw4+3SqroYO9VoUh+HcuJivvtJemA==}
     engines: {node: '>=10'}
     hasBin: true
 
@@ -2678,9 +2673,8 @@ packages:
   tinyexec@0.3.2:
     resolution: {integrity: sha512-KQQR9yN7R5+OSwaK0XQoj22pwHoTlgYqmUscPYoknOoWCWfj/5/ABTMRi69FrKU5ffPVh5QcFikpWJI/P1ocHA==}
 
-  tinyglobby@0.2.12:
-    resolution: {integrity: sha512-qkf4trmKSIiMTs/E63cxH+ojC2unam7rJ0WrauAzpT3ECNTxGRMlaXxVbfxMUC/w0LaYk6jQ4y/nGR9uBO3tww==}
-    engines: {node: '>=12.0.0'}
+  tinyexec@1.0.1:
+    resolution: {integrity: sha512-5uC6DDlmeqiOwCPmK9jMSdOuZTh8bU39Ys6yidB+UTt5hfZUPGAypSgFRiEp+jbi9qH40BLDvy85jIU88wKSqw==}
 
   tinyglobby@0.2.14:
     resolution: {integrity: sha512-tX5e7OM1HnYr2+a2C/4V0htOcSQcoSTH9KgJnVvNm5zm/cyEWKJ7j7YutsH9CxMdtOkkLFy2AHrMci9IM8IPZQ==}
@@ -2957,9 +2951,9 @@ packages:
     resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}
     engines: {node: '>=0.4'}
 
-  yaml@2.7.1:
-    resolution: {integrity: sha512-10ULxpnOCQXxJvBgxsn9ptjq6uviG/htZKk9veJGhlqn3w/DxQ631zFF+nlQXLwmImeS5amR2dl2U8sg6U9jsQ==}
-    engines: {node: '>= 14'}
+  yaml@2.8.0:
+    resolution: {integrity: sha512-4lLa/EcQCB0cJkyts+FpIRx5G/llPxfP6VQU5KByHEhLxY3IJCH0f0Hy1MHI8sClTvsIb8qwRJ6R/ZdlDJ/leQ==}
+    engines: {node: '>= 14.6'}
     hasBin: true
 
   yocto-queue@1.2.1:
@@ -3857,7 +3851,7 @@ snapshots:
 
   ansi-styles@5.2.0: {}
 
-  ansis@3.17.0: {}
+  ansis@4.1.0: {}
 
   anymatch@3.1.3:
     dependencies:
@@ -3925,29 +3919,29 @@ snapshots:
       base64-js: 1.5.1
       ieee754: 1.2.1
 
-  bumpp@10.1.0(magicast@0.3.5):
+  bumpp@10.1.1(magicast@0.3.5):
     dependencies:
-      ansis: 3.17.0
+      ansis: 4.1.0
       args-tokenizer: 0.3.0
-      c12: 3.0.3(magicast@0.3.5)
+      c12: 3.0.4(magicast@0.3.5)
       cac: 6.7.14
       escalade: 3.2.0
       jsonc-parser: 3.3.1
-      package-manager-detector: 1.2.0
-      semver: 7.7.1
-      tinyexec: 0.3.2
-      tinyglobby: 0.2.12
-      yaml: 2.7.1
+      package-manager-detector: 1.3.0
+      semver: 7.7.2
+      tinyexec: 1.0.1
+      tinyglobby: 0.2.14
+      yaml: 2.8.0
     transitivePeerDependencies:
       - magicast
 
-  c12@3.0.3(magicast@0.3.5):
+  c12@3.0.4(magicast@0.3.5):
     dependencies:
       chokidar: 4.0.3
       confbox: 0.2.2
       defu: 6.1.4
       dotenv: 16.5.0
-      exsolve: 1.0.4
+      exsolve: 1.0.5
       giget: 2.0.0
       jiti: 2.4.2
       ohash: 2.0.11
@@ -4267,7 +4261,7 @@ snapshots:
       signal-exit: 4.1.0
       strip-final-newline: 3.0.0
 
-  exsolve@1.0.4: {}
+  exsolve@1.0.5: {}
 
   extend-shallow@2.0.1:
     dependencies:
@@ -4300,10 +4294,6 @@ snapshots:
   fault@1.0.4:
     dependencies:
       format: 0.2.2
-
-  fdir@6.4.3(picomatch@4.0.2):
-    optionalDependencies:
-      picomatch: 4.0.2
 
   fdir@6.4.6(picomatch@4.0.2):
     optionalDependencies:
@@ -4748,7 +4738,7 @@ snapshots:
 
   make-dir@4.0.0:
     dependencies:
-      semver: 7.7.1
+      semver: 7.7.2
 
   markdown-extensions@1.1.1: {}
 
@@ -5293,6 +5283,8 @@ snapshots:
 
   package-manager-detector@1.2.0: {}
 
+  package-manager-detector@1.3.0: {}
+
   parse-entities@2.0.0:
     dependencies:
       character-entities: 1.2.4
@@ -5366,7 +5358,7 @@ snapshots:
   pkg-types@2.1.0:
     dependencies:
       confbox: 0.2.2
-      exsolve: 1.0.4
+      exsolve: 1.0.5
       pathe: 2.0.3
 
   postcss@8.5.3:
@@ -5745,7 +5737,7 @@ snapshots:
 
   semver@6.3.1: {}
 
-  semver@7.7.1: {}
+  semver@7.7.2: {}
 
   serialize-javascript@6.0.2:
     dependencies:
@@ -5886,10 +5878,7 @@ snapshots:
 
   tinyexec@0.3.2: {}
 
-  tinyglobby@0.2.12:
-    dependencies:
-      fdir: 6.4.3(picomatch@4.0.2)
-      picomatch: 4.0.2
+  tinyexec@1.0.1: {}
 
   tinyglobby@0.2.14:
     dependencies:
@@ -6200,7 +6189,7 @@ snapshots:
 
   xtend@4.0.2: {}
 
-  yaml@2.7.1: {}
+  yaml@2.8.0: {}
 
   yocto-queue@1.2.1: {}
 
