@@ -89,7 +89,7 @@ jobs:
         run: pnpm run test:coverage
 
       - name: 上传覆盖率报告
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: ./coverage/lcov.info
