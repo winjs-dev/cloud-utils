@@ -15,6 +15,10 @@ updates:
     commit-message:
       prefix: "chore"
       include: "scope"
+    # 忽略 esbuild，因为我们使用 pnpm overrides 管理
+    ignore:
+      - dependency-name: "esbuild"
+        update-types: ["version-update:semver-major", "version-update:semver-minor", "version-update:semver-patch"]
 
   # GitHub Actions 更新
   - package-ecosystem: "github-actions"
