@@ -25,6 +25,7 @@
   "files": [
     "dist"
   ],
+  "sideEffects": false,
   "keywords": [
     "rslib",
     "cloud-utils",
