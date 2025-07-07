@@ -57,7 +57,8 @@
     "test:dev": "vitest",
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
-    "release": "pnpm build && bumpp --commit --push --tag && pnpm publish --no-git-checks",
+    "release": "pnpm build && bumpp --commit --push --tag",
+    "publish": "pnpm publish --no-git-checks",
     "prepare": "pnpm build && simple-git-hooks",
     "lint:package": "publint",
     "type-check": "tsc --noEmit"
