@@ -57,6 +57,85 @@ jobs:
             pnpm install --no-frozen-lockfile
           }
 
+      - name: 获取版本号
+        id: get_version
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+            echo "tag_name=v${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
+            echo "is_manual=true" >> $GITHUB_OUTPUT
+          else
+            echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+            echo "tag_name=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+            echo "is_manual=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 检查版本是否已存在
+        id: check_version
+        run: |
+          VERSION=${{ steps.get_version.outputs.version }}
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          CURRENT_VERSION=$(node -p "require('./package.json').version")
+          
+          echo "🔍 检查版本信息:"
+          echo "  目标版本: $VERSION"
+          echo "  当前版本: $CURRENT_VERSION"
+          echo "  包名: $PACKAGE_NAME"
+          echo "  触发方式: ${{ github.event_name }}"
+          
+          # 检查版本格式
+          if [[ ! "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.-]+)?$ ]]; then
+            echo "❌ 版本格式不正确: $VERSION"
+            echo "请使用语义化版本格式，例如: 1.0.0, 1.0.0-beta.1"
+            exit 1
+          fi
+          
+          # 检查版本是否已在npm上发布
+          if npm view "$PACKAGE_NAME@$VERSION" version 2>/dev/null; then
+            echo "❌ 版本 $VERSION 已存在于 npm 上"
+            echo "请使用新的版本号重新发布"
+            exit 1
+          fi
+          
+          # 检查标签是否已存在
+          if git tag -l | grep -q "^v$VERSION$"; then
+            echo "❌ 标签 v$VERSION 已存在"
+            echo "请使用新的版本号或删除已存在的标签"
+            exit 1
+          fi
+          
+          # 对于手动触发，检查版本是否大于当前版本
+          if [ "${{ steps.get_version.outputs.is_manual }}" = "true" ]; then
+            if [ "$VERSION" = "$CURRENT_VERSION" ]; then
+              echo "❌ 新版本号不能与当前版本相同"
+              echo "当前版本: $CURRENT_VERSION"
+              echo "请使用更高的版本号"
+              exit 1
+            fi
+          fi
+          
+          echo "✅ 版本 $VERSION 可以发布"
+
+      - name: 更新版本号 (手动触发时)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          VERSION=${{ steps.get_version.outputs.version }}
+          echo "📝 更新 package.json 版本号到 $VERSION"
+          
+          # 更新 package.json 版本号
+          npm version $VERSION --no-git-tag-version
+          
+          # 提交版本更新
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add package.json
+          git commit -m "chore: bump version to $VERSION"
+          
+          # 创建标签
+          git tag ${{ steps.get_version.outputs.tag_name }}
+          
+          echo "✅ 版本号已更新，标签已创建"
+
       - name: 类型检查
         run: pnpm run type-check
 
@@ -68,44 +147,6 @@ jobs:
 
       - name: 包检查
         run: pnpm run lint:package
-
-      - name: 获取版本号
-        id: get_version
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "version=${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
-            echo "tag_name=v${{ github.event.inputs.version }}" >> $GITHUB_OUTPUT
-          else
-            echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
-            echo "tag_name=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
-          fi
-
-      - name: 检查版本是否已存在
-        id: check_version
-        run: |
-          VERSION=${{ steps.get_version.outputs.version }}
-          PACKAGE_NAME=$(node -p "require('./package.json').name")
-          
-          # 检查版本是否已在npm上发布
-          if npm view "$PACKAGE_NAME@$VERSION" version 2>/dev/null; then
-            echo "❌ 版本 $VERSION 已存在于 npm 上"
-            echo "请使用新的版本号重新发布"
-            exit 1
-          else
-            echo "✅ 版本 $VERSION 可以发布"
-          fi
-
-      - name: 更新版本号 (手动触发时)
-        if: github.event_name == 'workflow_dispatch'
-        run: |
-          npm version ${{ steps.get_version.outputs.version }} --no-git-tag-version
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add package.json
-          git commit -m "chore: bump version to ${{ steps.get_version.outputs.version }}"
-          git tag ${{ steps.get_version.outputs.tag_name }}
-          git push origin HEAD:${{ github.ref_name }}
-          git push origin ${{ steps.get_version.outputs.tag_name }}
 
       - name: 生成变更日志
         id: changelog
@@ -126,9 +167,20 @@ jobs:
           echo "changelog_file=changelog.txt" >> $GITHUB_OUTPUT
 
       - name: 发布到 npm
-        run: pnpm publish --no-git-checks
+        run: |
+          echo "🚀 开始发布到 npm..."
+          pnpm publish --no-git-checks
+          echo "✅ npm 发布成功"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: 推送更改和标签 (手动触发时)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          echo "📤 推送更改和标签..."
+          git push origin HEAD:${{ github.ref_name }}
+          git push origin ${{ steps.get_version.outputs.tag_name }}
+          echo "✅ 推送完成"
 
       - name: 创建 GitHub Release
         uses: actions/create-release@v1
