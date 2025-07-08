@@ -80,6 +80,21 @@ jobs:
             echo "tag_name=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
           fi
 
+      - name: 检查版本是否已存在
+        id: check_version
+        run: |
+          VERSION=${{ steps.get_version.outputs.version }}
+          PACKAGE_NAME=$(node -p "require('./package.json').name")
+          
+          # 检查版本是否已在npm上发布
+          if npm view "$PACKAGE_NAME@$VERSION" version 2>/dev/null; then
+            echo "❌ 版本 $VERSION 已存在于 npm 上"
+            echo "请使用新的版本号重新发布"
+            exit 1
+          else
+            echo "✅ 版本 $VERSION 可以发布"
+          fi
+
       - name: 更新版本号 (手动触发时)
         if: github.event_name == 'workflow_dispatch'
         run: |
