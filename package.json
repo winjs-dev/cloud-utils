@@ -102,5 +102,8 @@
       "core-js"
     ]
   },
-  "license": "MIT"
+  "license": "MIT",
+  "sideEffects": [
+    "src/.internal/ua-parser.js"
+  ]
 }
