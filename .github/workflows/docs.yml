@@ -74,7 +74,7 @@ jobs:
           NODE_ENV: production
 
       - name: 设置 Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
 
       - name: 上传文档构建产物
         uses: actions/upload-pages-artifact@v3
