@@ -54,7 +54,7 @@ devDependencies:
     version: 1.43.9(webpack@5.100.2)
   rspress-plugin-sitemap:
     specifier: ^1.1.1
-    version: 1.1.1
+    version: 1.2.0
   simple-git-hooks:
     specifier: ^2.9.0
     version: 2.9.0
@@ -4476,8 +4476,8 @@ packages:
       fs-extra: 11.3.0
     dev: true
 
-  /rspress-plugin-sitemap@1.1.1:
-    resolution: {integrity: sha512-usb6zWoi5wFFmBeA9HKR6BhsnnsItudMBarc54GYpuRL55SWkLxyWyMijv14mUI04FI7J7lEmea08uZE0bVKxg==}
+  /rspress-plugin-sitemap@1.2.0:
+    resolution: {integrity: sha512-fX5i0GLvrxRibKbL9rcBXA8PFDkhoB51bNrFpAuW0mkHg39Ji92SFzzURKvROpuwaGLZ+EP039zJNhx3kYYezA==}
     dev: true
 
   /rspress@1.43.9(webpack@5.100.2):
