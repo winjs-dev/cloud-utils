@@ -42,7 +42,7 @@ devDependencies:
     version: 11.0.3
   inquirer:
     specifier: ^8.2.5
-    version: 8.2.5
+    version: 8.2.6
   prettier:
     specifier: ^3.5.2
     version: 3.5.2
@@ -51,7 +51,7 @@ devDependencies:
     version: 0.3.12
   rspress:
     specifier: ^1.43.9
-    version: 1.43.9(webpack@5.99.9)
+    version: 1.43.9(webpack@5.100.2)
   rspress-plugin-sitemap:
     specifier: ^1.1.1
     version: 1.1.1
@@ -498,14 +498,14 @@ packages:
       tslib: 2.8.1
     dev: true
 
-  /@mdx-js/loader@2.3.0(webpack@5.99.9):
+  /@mdx-js/loader@2.3.0(webpack@5.100.2):
     resolution: {integrity: sha512-IqsscXh7Q3Rzb+f5DXYk0HU71PK+WuFsEhf+mSV3fOhpLcEpgsHvTQ2h0T6TlZ5gHOaBeFjkXwB52by7ypMyNg==}
     peerDependencies:
       webpack: '>=4'
     dependencies:
       '@mdx-js/mdx': 2.3.0
       source-map: 0.7.4
-      webpack: 5.99.9
+      webpack: 5.100.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -1069,11 +1069,11 @@ packages:
       react-refresh: 0.16.0
     dev: true
 
-  /@rspress/core@1.43.9(webpack@5.99.9):
+  /@rspress/core@1.43.9(webpack@5.100.2):
     resolution: {integrity: sha512-kmtyNEjnAYTT5eTjBVj9ot3FAg1Byu/iviPVhRlDc1770AGLzAmkon1GteTKCdlwQz8SK62Y6JY5SKSHfovVJw==}
     engines: {node: '>=14.17.6'}
     dependencies:
-      '@mdx-js/loader': 2.3.0(webpack@5.99.9)
+      '@mdx-js/loader': 2.3.0(webpack@5.100.2)
       '@mdx-js/mdx': 2.3.0
       '@mdx-js/react': 2.3.0(react@18.3.1)
       '@rsbuild/core': 1.2.3
@@ -1240,7 +1240,7 @@ packages:
       rspress: ^1.43.9
     dependencies:
       '@rspress/shared': 1.43.9
-      rspress: 1.43.9(webpack@5.99.9)
+      rspress: 1.43.9(webpack@5.100.2)
       typedoc: 0.24.8(typescript@5.0.4)
       typedoc-plugin-markdown: 3.17.1(typedoc@0.24.8)
     transitivePeerDependencies:
@@ -1388,8 +1388,8 @@ packages:
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
     dev: true
 
-  /@types/node@24.0.10:
-    resolution: {integrity: sha512-ENHwaH+JIRTDIEEbDK6QSQntAYGtbvdDXnMXnZaZ6k13Du1dPMmprkEHIL7ok2Wl2aZevetwTAb5S+7yIF+enA==}
+  /@types/node@24.1.0:
+    resolution: {integrity: sha512-ut5FthK5moxFKH2T1CUOC6ctR67rQRvvHdFLCD2Ql6KXmMuCrjsSsRI9UsLCm9M18BMwClv4pn327UvB7eeO1w==}
     dependencies:
       undici-types: 7.8.0
     dev: true
@@ -1588,6 +1588,15 @@ packages:
     resolution: {integrity: sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==}
     dev: true
 
+  /acorn-import-phases@1.0.4(acorn@8.15.0):
+    resolution: {integrity: sha512-wKmbr/DDiIXzEOiWrTTUcDm24kQ2vGfZQvM2fwg2vXqR5uW6aapr7ObPtj1th32b9u90/Pf4AItvdTh42fBmVQ==}
+    engines: {node: '>=10.13.0'}
+    peerDependencies:
+      acorn: ^8.14.0
+    dependencies:
+      acorn: 8.15.0
+    dev: true
+
   /acorn-jsx@5.3.2(acorn@8.15.0):
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
     peerDependencies:
@@ -1776,7 +1785,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001727
-      electron-to-chromium: 1.5.179
+      electron-to-chromium: 1.5.190
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.25.1)
     dev: true
@@ -2186,8 +2195,8 @@ packages:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
     dev: true
 
-  /electron-to-chromium@1.5.179:
-    resolution: {integrity: sha512-UWKi/EbBopgfFsc5k61wFpV7WrnnSlSzW/e2XcBmS6qKYTivZlLtoll5/rdqRTxGglGHkmkW0j0pFNJG10EUIQ==}
+  /electron-to-chromium@1.5.190:
+    resolution: {integrity: sha512-k4McmnB2091YIsdCgkS0fMVMPOJgxl93ltFzaryXqwip1AaxeDqKCGLxkXODDA5Ab/D+tV5EL5+aTx76RvLRxw==}
     dev: true
 
   /email-addresses@5.0.0:
@@ -2844,8 +2853,8 @@ packages:
     resolution: {integrity: sha512-7NXolsK4CAS5+xvdj5OMMbI962hU/wvwoxk+LWR9Ek9bVtyuuYScDN6eS0rUm6TxApFpw7CX1o4uJzcd4AyD3Q==}
     dev: true
 
-  /inquirer@8.2.5:
-    resolution: {integrity: sha512-QAgPDQMEgrDssk1XiwwHoOGYF9BAbUcc1+j+FhEvaOt8/cKRqyLn0U5qA6F74fGhTMGxf92pOvPBeh29jQJDTQ==}
+  /inquirer@8.2.6:
+    resolution: {integrity: sha512-M1WuAmb7pn9zdFRtQYk26ZBoY043Sse0wVDdk4Bppr+JOXyQYybdtvK+l9wUibhtjdjvtoiNy8tk+EgsYIUqKg==}
     engines: {node: '>=12.0.0'}
     dependencies:
       ansi-escapes: 4.3.2
@@ -2862,7 +2871,7 @@ packages:
       string-width: 4.2.3
       strip-ansi: 6.0.1
       through: 2.3.8
-      wrap-ansi: 7.0.0
+      wrap-ansi: 6.2.0
     dev: true
 
   /invariant@2.2.4:
@@ -3032,7 +3041,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 24.0.10
+      '@types/node': 24.1.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: true
@@ -4462,12 +4471,12 @@ packages:
     resolution: {integrity: sha512-usb6zWoi5wFFmBeA9HKR6BhsnnsItudMBarc54GYpuRL55SWkLxyWyMijv14mUI04FI7J7lEmea08uZE0bVKxg==}
     dev: true
 
-  /rspress@1.43.9(webpack@5.99.9):
+  /rspress@1.43.9(webpack@5.100.2):
     resolution: {integrity: sha512-5O4ZE2HwdtcFjBpB87K8An5gVvNq6KcKlSreMa2mogk7rxApF9uLOmkiy2hyrXUxCoTOo9rkpFJzw92ehx9qxQ==}
     hasBin: true
     dependencies:
       '@rsbuild/core': 1.2.3
-      '@rspress/core': 1.43.9(webpack@5.99.9)
+      '@rspress/core': 1.43.9(webpack@5.100.2)
       '@rspress/shared': 1.43.9
       cac: 6.7.14
       chokidar: 3.6.0
@@ -4922,7 +4931,7 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /terser-webpack-plugin@5.3.14(webpack@5.99.9):
+  /terser-webpack-plugin@5.3.14(webpack@5.100.2):
     resolution: {integrity: sha512-vkZjpUjb6OMS7dhV+tILUW6BhpDR7P2L/aQSAv+Uwk+m8KATX9EccViHTJR2qDtACKPIYndLGCyl3FMo+r2LMw==}
     engines: {node: '>= 10.13.0'}
     peerDependencies:
@@ -4943,7 +4952,7 @@ packages:
       schema-utils: 4.3.2
       serialize-javascript: 6.0.2
       terser: 5.43.1
-      webpack: 5.99.9
+      webpack: 5.100.2
     dev: true
 
   /terser@5.43.1:
@@ -5437,8 +5446,8 @@ packages:
     engines: {node: '>=10.13.0'}
     dev: true
 
-  /webpack@5.99.9:
-    resolution: {integrity: sha512-brOPwM3JnmOa+7kd3NsmOUOwbDAj8FT9xDsG3IW0MgbN9yZV7Oi/s/+MNQ/EcSMqw7qfoRyXPoeEWT8zLVdVGg==}
+  /webpack@5.100.2:
+    resolution: {integrity: sha512-QaNKAvGCDRh3wW1dsDjeMdDXwZm2vqq3zn6Pvq4rHOEOGSaUMgOOjG2Y9ZbIGzpfkJk9ZYTHpDqgDfeBDcnLaw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     peerDependencies:
@@ -5454,6 +5463,7 @@ packages:
       '@webassemblyjs/wasm-edit': 1.14.1
       '@webassemblyjs/wasm-parser': 1.14.1
       acorn: 8.15.0
+      acorn-import-phases: 1.0.4(acorn@8.15.0)
       browserslist: 4.25.1
       chrome-trace-event: 1.0.4
       enhanced-resolve: 5.18.2
@@ -5468,7 +5478,7 @@ packages:
       neo-async: 2.6.2
       schema-utils: 4.3.2
       tapable: 2.2.2
-      terser-webpack-plugin: 5.3.14(webpack@5.99.9)
+      terser-webpack-plugin: 5.3.14(webpack@5.100.2)
       watchpack: 2.4.4
       webpack-sources: 3.3.3
     transitivePeerDependencies:
@@ -5496,6 +5506,15 @@ packages:
 
   /wordwrap@1.0.0:
     resolution: {integrity: sha512-gvVzJFlPycKc5dZN4yPkP8w7Dc37BtP1yczEneOb4uq34pXZcvrtRTmWV8W+Ume+XCxKgbjM+nevkyFPMybd4Q==}
+    dev: true
+
+  /wrap-ansi@6.2.0:
+    resolution: {integrity: sha512-r6lPcBGxZXlIcymEu7InxDMhdW0KDxpLgoFLcguasxCaJ/SOIZwINatK9KY/tf+ZrlywOKU0UDj3ATXUBfxJXA==}
+    engines: {node: '>=8'}
+    dependencies:
+      ansi-styles: 4.3.0
+      string-width: 4.2.3
+      strip-ansi: 6.0.1
     dev: true
 
   /wrap-ansi@7.0.0:
