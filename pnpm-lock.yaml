@@ -32,7 +32,7 @@ importers:
         version: 10.2.2(magicast@0.3.5)
       chalk:
         specifier: ^5.4.1
-        version: 5.4.1
+        version: 5.5.0
       gh-pages:
         specifier: ^6.3.0
         version: 6.3.0
@@ -1233,8 +1233,8 @@ packages:
     resolution: {integrity: sha512-RITGBfijLkBddZvnn8jdqoTypxvqbOLYQkGGxXzeFjVHvudaPw0HNFD9x928/eUwYWd2dPCugVqspGALTZZQKw==}
     engines: {node: '>=4'}
 
-  chalk@5.4.1:
-    resolution: {integrity: sha512-zgVZuo2WcZgfUEmsn6eO3kINexW8RAE4maiQ8QNs8CtpPCSyMiYsULR3HQYkm3w8FIA3SberyMJMSldGsW+U3w==}
+  chalk@5.5.0:
+    resolution: {integrity: sha512-1tm8DTaJhPBG3bIkVeZt1iZM9GfSX2lzOeDVZH9R9ffRHpmHvxZ/QhgQH/aDTkswQVt+YHdXAdS/In/30OjCbg==}
     engines: {node: ^12.17.0 || ^14.13 || >=16.0.0}
 
   character-entities-html4@2.1.0:
@@ -4262,7 +4262,7 @@ snapshots:
       pathval: 1.1.1
       type-detect: 4.1.0
 
-  chalk@5.4.1: {}
+  chalk@5.5.0: {}
 
   character-entities-html4@2.1.0: {}
 
