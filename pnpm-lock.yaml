@@ -936,18 +936,15 @@ packages:
     peerDependencies:
       '@rspress/runtime': ^1.45.1
 
-  '@rspress/plugin-typedoc@1.45.0':
-    resolution: {integrity: sha512-U3XT9uAgPF+bMPEseF/2ZwwCENmoFJVmelINS65mg810wbPLz9WcfdzZ3aPxMXxJ9GmOHaw9Zc+ITHJXxObVzQ==}
+  '@rspress/plugin-typedoc@1.45.1':
+    resolution: {integrity: sha512-7KhSB6cHLzeXufOM6FDalQ2XSAqGjD5KQBSEZppcRRhWwkeC04O9PsBXhU0N4kH+56aPPXc3u0fQW7yAZBOl5g==}
     engines: {node: '>=14.17.6'}
     peerDependencies:
-      rspress: ^1.45.0
+      rspress: ^1.45.1
 
   '@rspress/runtime@1.45.1':
     resolution: {integrity: sha512-iJdob6st0EJsnaUeCIvVAKgVzrplhuREiIoapkf7WsjYGRkFmWIFB1b6jIFZNQZNyf/CSrJgvCSLghlHvvyBpg==}
     engines: {node: '>=14.17.6'}
-
-  '@rspress/shared@1.45.0':
-    resolution: {integrity: sha512-/M3AKChGVyKcX0MzPWpFIT2tFFsDLluHXCwww54LbMJBUKJm53FfKna0IUKMUesP9/A98RIb4Gsmx3tI18jCRw==}
 
   '@rspress/shared@1.45.1':
     resolution: {integrity: sha512-GMEjPw+CcAQKUqrzU/WOC9RuGT3G1+YJox+nzLSX2kuLNcjnHLDdU7+uKY/LBbs7MDNP+76xRLq/jYk1WnJf7Q==}
@@ -3907,10 +3904,9 @@ snapshots:
     dependencies:
       '@rspress/runtime': 1.45.1
       medium-zoom: 1.1.0
-
   '@rspress/plugin-typedoc@1.45.0(rspress@1.45.1(webpack@5.98.0))(typescript@5.9.2)':
     dependencies:
-      '@rspress/shared': 1.45.0
+      '@rspress/shared': 1.45.1
       rspress: 1.45.1(webpack@5.98.0)
       typedoc: 0.24.8(typescript@5.9.2)
       typedoc-plugin-markdown: 3.17.1(typedoc@0.24.8(typescript@5.9.2))
@@ -3924,13 +3920,6 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       react-helmet-async: 1.3.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react-router-dom: 6.30.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-
-  '@rspress/shared@1.45.0':
-    dependencies:
-      '@rsbuild/core': 1.3.22
-      gray-matter: 4.0.3
-      lodash-es: 4.17.21
-      unified: 10.1.2
 
   '@rspress/shared@1.45.1':
     dependencies:
