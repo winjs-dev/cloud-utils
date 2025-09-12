@@ -53,7 +53,7 @@ importers:
         version: 1.45.3(webpack@5.98.0)
       rspress-plugin-sitemap:
         specifier: ^1.2.0
-        version: 1.2.0
+        version: 1.2.1
       simple-git-hooks:
         specifier: ^2.9.0
         version: 2.13.1
@@ -2548,8 +2548,8 @@ packages:
   rspack-plugin-virtual-module@0.1.13:
     resolution: {integrity: sha512-VC0HiVHH6dtGfTgfpbDgVTt6LlYv+uAg9CWGWAR5lBx9FbKPEZeGz7iRUUP8vMymx+PGI8ps0u4a25dne0rtuQ==}
 
-  rspress-plugin-sitemap@1.2.0:
-    resolution: {integrity: sha512-fX5i0GLvrxRibKbL9rcBXA8PFDkhoB51bNrFpAuW0mkHg39Ji92SFzzURKvROpuwaGLZ+EP039zJNhx3kYYezA==}
+  rspress-plugin-sitemap@1.2.1:
+    resolution: {integrity: sha512-JMf2/SKerX3oiFuNaRAnPJxOtBl5hOF0qupK63Fh9CaTb6Mn440iximV+1V0fd/XeOhHlN0oLJPFUDrrkgkcwg==}
 
   rspress@1.45.3:
     resolution: {integrity: sha512-lvWZpr/pbM0CIHGEYaTbEq4fer13RYtkIWWYofswqZoeTqXCSanxvKRy2Y23mEFlKeabXL9ERPPzV/mC8CbTEw==}
@@ -5953,7 +5953,7 @@ snapshots:
     dependencies:
       fs-extra: 11.3.1
 
-  rspress-plugin-sitemap@1.2.0: {}
+  rspress-plugin-sitemap@1.2.1: {}
 
   rspress@1.45.3(webpack@5.98.0):
     dependencies:
