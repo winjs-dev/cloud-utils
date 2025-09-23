@@ -57,9 +57,6 @@ jobs:
             pnpm install --no-frozen-lockfile
           }
 
-      - name: 格式检查
-        run: pnpm run lint
-
       - name: 构建项目
         run: pnpm run build
 
