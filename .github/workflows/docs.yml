@@ -88,5 +88,5 @@ jobs:
       - name: 通知部署成功
         run: |
           echo "📚 文档部署成功!"
-          echo "🌐 访问地址: https://winjs-dev.github.io/cloud-utils/"
-          echo "📝 部署 ID: ${{ steps.deployment.outputs.page_url }}" 
+          echo "🌐 访问地址: ${{ steps.deployment.outputs.page_url }}"
+          echo "📝 部署 ID: ${{ steps.deployment.outputs.deployment_id }}" 
