@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - master
+      - refactor/rslib
     paths:
       - 'docs/**'
       - 'src/**'
