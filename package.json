@@ -1,7 +1,7 @@
 {
   "name": "@winner-fed/cloud-utils",
   "description": "A collection of utils by winner fed",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "type": "module",
   "packageManager": "pnpm@10.16.1",
   "author": {
