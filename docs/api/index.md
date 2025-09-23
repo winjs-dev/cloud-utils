@@ -2,6 +2,12 @@
 
 ## Table of contents
 
+### Interfaces
+
+- [GenerateIdCardOptions](./interfaces/GenerateIdCardOptions.md)
+- [IdCardInfo](./interfaces/IdCardInfo.md)
+- [IdCardResult](./interfaces/IdCardResult.md)
+
 ### Functions
 
 - [accAdd](./functions/accAdd.md)
@@ -38,6 +44,7 @@
 - [formatPhone](./functions/formatPhone.md)
 - [formatTimeAgo](./functions/formatTimeAgo.md)
 - [generateGUID](./functions/generateGUID.md)
+- [generateIdCard](./functions/generateIdCard.md)
 - [get](./functions/get.md)
 - [getBrowser](./functions/getBrowser.md)
 - [getCookie](./functions/getCookie.md)
@@ -46,6 +53,9 @@
 - [getDays](./functions/getDays.md)
 - [getDevice](./functions/getDevice.md)
 - [getDiffDay](./functions/getDiffDay.md)
+- [getIdCardAge](./functions/getIdCardAge.md)
+- [getIdCardGender](./functions/getIdCardGender.md)
+- [getIdCardRegion](./functions/getIdCardRegion.md)
 - [getImgBase64](./functions/getImgBase64.md)
 - [getIn](./functions/getIn.md)
 - [getLocationHrefParam](./functions/getLocationHrefParam.md)
@@ -149,6 +159,7 @@
 - [objectFromPairs](./functions/objectFromPairs.md)
 - [objectToPairs](./functions/objectToPairs.md)
 - [only](./functions/only.md)
+- [parseIdCard](./functions/parseIdCard.md)
 - [photoCompress](./functions/photoCompress.md)
 - [preZeroFill](./functions/preZeroFill.md)
 - [prettyBytes](./functions/prettyBytes.md)
@@ -169,3 +180,4 @@
 - [transferHumpUnderline](./functions/transferHumpUnderline.md)
 - [trim](./functions/trim.md)
 - [urlJoin](./functions/urlJoin.md)
+- [validateIdCard](./functions/validateIdCard.md)

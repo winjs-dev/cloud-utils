@@ -27,7 +27,7 @@ function generateExportStatements(files) {
   return files
     .map(file => {
       const fileName = path.basename(file, '.ts');
-      if (fileName === 'is' || fileName === 'cookie'|| fileName === 'math') {
+      if (fileName === 'is' || fileName === 'cookie'|| fileName === 'math'|| fileName === 'idCard') {
         return `export * from './${fileName}';`;
       }
       return `export { ${fileName} } from './${fileName}';`;

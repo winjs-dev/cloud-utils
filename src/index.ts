@@ -57,6 +57,7 @@ export { hasClass } from './hasClass';
 export { hexToRgb } from './hexToRgb';
 export { htmlDecode } from './htmlDecode';
 export { htmlEncode } from './htmlEncode';
+export * from './idCard';
 export { inAlipay } from './inAlipay';
 export { inQQ } from './inQQ';
 export { inQQBrowser } from './inQQBrowser';
