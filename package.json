@@ -70,7 +70,7 @@
     "idcard": "4.2.0"
   },
   "devDependencies": {
-    "@rslib/core": "^0.15.0",
+    "@rslib/core": "^0.18.0",
     "@rspress/plugin-typedoc": "^1.45.6",
     "@types/glob": "^9.0.0",
     "@vitest/coverage-v8": "^3.0.0",
