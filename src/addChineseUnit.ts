@@ -42,12 +42,13 @@ export function addChineseUnit(number: number, decimalDigit: number = 2): string
     const digit = getDigit(integer);
     if (digit > 3) {
       let remainder = digit % 8;
+      // ‘十万’、‘百万’、‘千万’显示为‘万’
       if (remainder >= 5) {
-        remainder = 8 - remainder;
+        remainder = 4;
       }
       return Math.round(number / Math.pow(10, remainder + mutiple - decimalDigit)) / Math.pow(10, decimalDigit) + '万';
     } else {
-      return Math.round(number / Math.pow(10, mutiple - decimalDigit)) / Math.pow(10, decimalDigit) + '万';
+      return Math.round(number / Math.pow(10, mutiple - decimalDigit)) / Math.pow(10, decimalDigit) + '';
     }
   };
 
@@ -64,6 +65,7 @@ export function addChineseUnit(number: number, decimalDigit: number = 2): string
 
   const integer = Math.floor(number);
   const digit = getDigit(integer);
+  // ['个', '十', '百', '千', '万', '十万', '百万', '千万'];
   const unit = [];
 
   if (digit > 3) {
@@ -79,6 +81,6 @@ export function addChineseUnit(number: number, decimalDigit: number = 2): string
       return addWan(integer, number, 0, decimalDigit);
     }
   } else {
-    return String(number);
+    return parseFloat(number.toString()).toFixed(decimalDigit);
   }
 }
