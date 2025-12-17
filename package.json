@@ -57,7 +57,7 @@
     "test:coverage": "vitest run --coverage",
     "test:ui": "vitest --ui",
     "release": "pnpm build && bumpp --commit --push --tag",
-    "prepare": "simple-git-hooks",
+    "prepare": "pnpm build && simple-git-hooks",
     "lint:package": "publint",
     "type-check": "tsc --noEmit"
   },
@@ -83,8 +83,7 @@
     "rspress": "^1.45.6",
     "rspress-plugin-sitemap": "^1.2.0",
     "simple-git-hooks": "^2.9.0",
-    "typedoc": "0.28.13",
-    "typescript": "5.9.3",
+    "typescript": "5.1.6",
     "vitest": "^3.0.0"
   },
   "repository": {
