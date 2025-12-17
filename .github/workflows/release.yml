@@ -49,6 +49,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           generateReleaseNotes: "true"
+          draft: false
 
       - name: 通知发布成功
         run: |
