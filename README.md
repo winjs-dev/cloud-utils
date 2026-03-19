@@ -45,6 +45,8 @@ const empty = isEmpty(null); // true
 
 ### 独立函数导入（按需加载）
 
+使用主入口 `@winner-fed/cloud-utils` 会解析整包（含 idCard、decimal.js 等），打包时会把相关依赖（如 `idcard`）一并打进产物。若只需少量函数（例如只要 `formatDate`），请用子路径按需引入，避免打入未使用的依赖：
+
 对于只需要少数几个函数的场景，可以直接导入独立函数，减少打包体积：
 
 ```typescript
