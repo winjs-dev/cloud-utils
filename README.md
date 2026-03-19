@@ -123,15 +123,15 @@ const sum = utils.accAdd(0.1, 0.2);
 
 | 导入方式 | 包体积 | 适用场景 | 示例 |
 |---------|-------|---------|------|
-| **完整引入** | ~94KB | 使用多个函数时推荐 | `import { a, b, c } from '@winner-fed/cloud-utils'` |
-| **独立函数导入** | ~1-3KB/函数 | 只使用少数函数时 | `import { accAdd } from '@winner-fed/cloud-utils/accAdd'` |
+| **完整引入** | 整包较大（含 idcard、decimal.js 等依赖） | 使用多个函数时 | `import { a, b, c } from '@winner-fed/cloud-utils'` |
+| **独立函数导入** | ~1-3KB/函数 | 只使用少数函数时推荐 | `import { accAdd } from '@winner-fed/cloud-utils/accAdd'` |
 | **直接路径导入** | ~1-3KB/函数 | 明确指定格式时 | `import { accAdd } from '@winner-fed/cloud-utils/dist/esm/accAdd.js'` |
 
 ### 选择建议
 
-- 🚀 **使用 3 个以上函数**：推荐完整引入
-- ⚡ **只使用 1-2 个函数**：推荐独立函数导入
-- 🎯 **对包体积非常敏感**：使用独立函数导入
+- 🚀 **使用 3 个以上函数且可接受整包体积**：可用完整引入（会包含 idcard、decimal.js 等依赖）
+- ⚡ **只使用 1-2 个函数**：推荐独立函数导入，避免打入未用依赖
+- 🎯 **对包体积敏感**：一律用独立函数导入
 - 🛠️ **需要特定格式**：使用直接路径导入
 
 ## 功能分类
