@@ -95,7 +95,7 @@
     "access": "public"
   },
   "resolutions": {
-    "esbuild": "^0.25.0"
+    "esbuild": "^0.28.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
